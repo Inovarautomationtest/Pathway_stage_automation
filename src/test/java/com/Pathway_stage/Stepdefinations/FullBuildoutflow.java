@@ -59,7 +59,7 @@ public class FullBuildoutflow extends Basepage
 
 	@Then("^Rise a BuildOutflow Request with  First Market User (\\d+) with \"([^\"]*)\"$")
 	public void rise_a_BuildOutflow_Request_with_First_Market_User(int i, String date) {
-		//market.buildoutrequest(i, date);
+		market.buildoutrequest(i, date);
 		extentpassreport("Rise a build out request with Market user1");
 		System.out.println("Rise a build out request with Market user1");
 	}
@@ -95,7 +95,7 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		try {
-			//rpm.buildoutrequestwithRPMuser(statusoftheapplication, i);
+			rpm.buildoutrequestwithRPMuser(statusoftheapplication, i);
 		} catch (NoSuchElementException e) {
 			
 		}
@@ -132,7 +132,7 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		sleep();
-		//noc.buildourequestwithNOCuser(statusoftheapplication, i);
+		noc.buildourequestwithNOCuser(statusoftheapplication, i);
 		extentpassreport("Check the" + statusoftheapplication + "of the BUildout request with NOC USER1");
 		System.out.println("Check the" + statusoftheapplication + "of the BUildout request with NOC USER1");
 	}
@@ -160,12 +160,20 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		sleep();
-		legal.sendtoFCCbuildrequestwithLegalsuer(i);
-		extentpassreport("Buildout request send to FCC with Legal user1 ");
-		System.out.println("Buildout request send to FCC with Leagal user1");
+		legal.sendtounderreviewbuildrequestwithLegalsuer(i);
+		extentpassreport("Buildout request send to underreview with Legal user1 ");
+		System.out.println("Buildout request send to undereview  with Leagal user1");
 
 	}
 
+	@Then("^application send to FCC from the under review page with First Legal User (\\d+)$")
+	public void application_send_to_FCC_from_the_under_review_page_with_First_Legal_User(int i) 
+	{
+		legal.sendtoFCCfromundereviewpage(i);
+		extentpassreport("send to FCC build out application from Under review page with First legal user");
+		System.out.println("send to FCC build out application from Under review page with First legal user");
+	   
+	}
 	@Then("^logout First Legal User after rise a full BuildOutflow process$")
 	public void logout_First_Legal_User_after_rise_a_full_BuildOutflow_process() throws Throwable {
 
@@ -431,7 +439,7 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		sleep();
-	    legal.rejectbuildoutapplicationwithlegaluser(i);
+	   legal.rejectbuildoutapplicationwithlegaluser(i);
 	    extentpassreport("reject buildout request with fourth legaluser");
 	    System.out.println("reject buildout request with fourth legaluser");
 	}
@@ -523,12 +531,19 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		sleep();
-		legal.sendtoFCCbuildrequestwithLegalsuer(i);
-		extentpassreport("Legal user 5 send to FCC with buildout request");
-		System.out.println("Legal user 5 send to FCC with buildout request");
+		legal.sendtounderreviewbuildrequestwithLegalsuer(i);
+		extentpassreport("Legal user 5 send to undereiew with buildout request");
+		System.out.println("Legal user 5 send to underreview with buildout request");
 
 	}
-
+	@Then("^buildout application send to FCC from the underreview page with fifth Legal user (\\d+)$")
+	public void buildout_application_send_to_FCC_from_the_underreview_page_with_fifth_Legal_user(int i) 
+	{
+	 legal.sendtoFCCfromundereviewpage(i);
+	 extentpassreport("fifth legal user buildout application send to fcc from underreview page");
+	 System.out.println("fifth legal user buildout application send to fcc from underreview page");
+	   
+	}
 	@Then("^logout fifth Legal User after rise a full BuildOutflow process$")
 	public void logout_fifth_Legal_User_after_rise_a_full_BuildOutflow_process() {
         closebrowser();
@@ -661,7 +676,271 @@ public class FullBuildoutflow extends Basepage
 		closebrowser();
 		extentpassreport("Logout NOC USER7 after succesful build out request");
 		System.out.println("Logout NOC USER7 after succesful build out request");
-		extentreportssave();
+		
 	}
+	@When("^seventh Legal User login with valid creditinals for full BuildOutflow process$")
+	public void seventh_Legal_User_login_with_valid_creditinals_for_full_BuildOutflow_process()
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		extentpassreport("Login with seventh  legal account for build out process");
+		System.out.println("Login with seventh  legal account for build out process");
+	}
+
+	@Then("^BuildOutflow Request reject with  seventh Legal User (\\d+)$")
+	public void buildoutflow_Request_reject_with_seventh_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+	    legal.rejectbuildoutapplicationwithlegaluser(i);
+	    extentpassreport("reject buildout request with fourth legaluser");
+	    System.out.println("reject buildout request with fourth legaluser");
+	}
+
+	@Then("^logout seventh Legal User after rise a full BuildOutflow process$")
+	public void logout_seventh_Legal_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		closebrowser();
+		extentpassreport("seventh legal user logout after buildout request");
+		System.out.println("seventh legal user  logout after buildout request");
+	}
+
+	@When("^eighth Market User login with valid creditinals for full BuildOutflow process with \"([^\"]*)\"$")
+	public void eighth_Market_User_login_with_valid_creditinals_for_full_BuildOutflow_process_with(String arg1) 
+	{
+		login.InitApplication();
+		market.loginwithMarketUser();
+		market.marketuserpopuplogin();
+		extentpassreport("Login succesfully eighth Market user for buildout request");
+		System.out.println("Login succesfully eighth  Market user4 for buildout request");
+
+	}
+
+	@Then("^Rise a BuildOutflow Request with  eighth Market User (\\d+) with \"([^\"]*)\"$")
+	public void rise_a_BuildOutflow_Request_with_eighth_Market_User_with(int i, String date) 
+	{
+		refreshthepage();
+		sleep();
+		market.buildoutrequest(i, date);
+		extentpassreport("Rise a build out request with Market user8");
+		System.out.println("Rise a build out request with Market user8");
+	}
+
+	@Then("^logout  eighth MarketUser after rise a full BuildOutflow process$")
+	public void logout_eighth_MarketUser_after_rise_a_full_BuildOutflow_process() 
+	{
+try {
+			
+			closebrowser();
+		} catch (NoSuchElementException e) {
+
+		}
+
+		System.out.println(">>>logout market user8 after rise build out request");
+		extentpassreport("Logout Market user8 after succesful rise a Buildout request");
+	}
+
+	@When("^eighth RPM User login with valid creditinals for full BuildOutflow process$")
+	public void eighth_RPM_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println("eighth RPM USER login succesfully");
+		extentpassreport("eight RPM user login succesfully");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a BuildOutflow Request with eighth RPM User (\\d+)$")
+	public void check_the_status_a_BuildOutflow_Request_with_eighth_RPM_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.buildoutrequestwithRPMuser(statusoftheapplication, i);
+		extentpassreport("Check the" + statusoftheapplication + "of the BUildout request with RPM USER4");
+		System.out.println("Check the\" + statusoftheapplication + \"of the BUildout request with RPM USER4");
+	}
+
+	@Then("^logout eighth RPM User after rise a full BuildOutflow process$")
+	public void logout_eighth_RPM_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		closebrowser();
+		System.out.println(">>logout Eighth Market user");
+		extentpassreport("Logout eighth Market user after build out process"); 
+	}
+
+	@When("^eighth NOC User login with valid creditinals for full BuildOutflow process$")
+	public void eighth_NOC_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		extentpassreport("Login with eighth NOC USER  FOR BUILD OUT PROCESS");
+		System.out.println("Login with eighth NOC USER  FOR BUILD OUT PROCESS");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a BuildOutflow Request with  eighth NOC User (\\d+)$")
+	public void check_the_status_a_BuildOutflow_Request_with_eighth_NOC_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		noc.buildourequestwithNOCuser(statusoftheapplication, i);
+		extentpassreport("check the" + statusoftheapplication + "OF BUILDout request with NOC User4");
+		System.out.println("check the" + statusoftheapplication + "OF BUILDout request with NOC User4");
+	}
+
+	@Then("^logout eighth NOC User after rise a full BuildOutflow process$")
+	public void logout_eighth_NOC_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		closebrowser();
+		extentpassreport("eighth noc user  logout after buildout request");
+		System.out.println("eighth noc user logout after buildout request");
+	}
+
+	@When("^eighth Legal User login with valid creditinals for full BuildOutflow process$")
+	public void eighth_Legal_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		extentpassreport("Login with eighth  legal account for build out process");
+		System.out.println("Login with eighth  legal account for build out process");
+	}
+
+	@Then("^Request send to FCC of BuildOutflow Request with  eighth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_BuildOutflow_Request_with_eighth_Legal_User(int i)  {
+		refreshthepage();
+		sleep();
+		legal.sendtounderreviewbuildrequestwithLegalsuer(i);
+		extentpassreport("Buildout request send to under review with eighth Legal user1 ");
+		System.out.println("Buildout request send to under review with eighth Legal user1 ");
+	}
+
+	@Then("^reject Under review application with eighth Legal user (\\d+)$")
+	public void reject_Under_review_application_with_eighth_Legal_user(int i) 
+	{
+	    try {
+			legal.rejectfromunderreviewwithLegaluser(i);
+			extentpassreport("eigth Legal user sucessfully reject build out application from the Underreview page");
+			System.out.println("eigth Legal user sucessfully reject build out application from the Underreview page");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Then("^logout eighth Legal User after rise a full BuildOutflow process$")
+	public void logout_eighth_Legal_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout eighth Legal user after check the build out request");
+		System.out.println("Logout eighth Leagal user after check the build out request");
+	}
+
+	@When("^ninth RPM User login with valid creditinals for full BuildOutflow process$")
+	public void ninth_RPM_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		extentpassreport("ninth RPM user login with valid credtinals for Rise a build out request");
+		System.out.println("ninthRPM user login with valid credtinals for Rise a build out request");
+	}
+
+	@Then("^Rise a BuildOutflow Request with  ninth RPM User (\\d+) with \"([^\"]*)\"$")
+	public void rise_a_BuildOutflow_Request_with_ninth_RPM_User_with(int i, String date) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.createbuildoutrequestwithrpm(i, date);
+		extentpassreport("Rise a request with ninth RPM user for build out request");
+		System.out.println("Rise a request with ninth RPM user for build out request");
+
+	}
+
+	@Then("^logout  ninth RPM User after rise a full BuildOutflow process$")
+	public void logout_ninth_RPM_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		try {
+			closebrowser();
+			} catch (NoSuchElementException e) {
+
+			}
+			extentpassreport("logout ninth RPM user after creating Buildout reqesut");
+			System.out.println("logout ninth  RPM user after creating Buildout reqesut");
+	}
+
+	@When("^ninth NOC User login with valid creditinals for full BuildOutflow process$")
+	public void ninth_NOC_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		extentpassreport("ninth NOC user  login with valid credtinals for Build Out request");
+		System.out.println("ninth NOC user login with valid credtinals for Build Out request");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a BuildOutflow Request with  ninth NOC User (\\d+)$")
+	public void check_the_status_a_BuildOutflow_Request_with_ninth_NOC_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		noc.buildourequestwithNOCuser(statusoftheapplication, i);
+		extentpassreport("NOC user5  check the" + statusoftheapplication + "for build out request");
+		System.out.println("NOC user5  check the" + statusoftheapplication + "for build out request");
+	}
+
+	@Then("^logout  ninth NOC User after rise a full BuildOutflow process$")
+	public void logout_ninth_NOC_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout NOC USER5 after succesful build out request");
+		System.out.println("Logout NOC USER5 after succesful build out request");
+
+	}
+
+	@When("^ninth Legal User login with valid creditinals for full BuildOutflow process$")
+	public void ninth_Legal_User_login_with_valid_creditinals_for_full_BuildOutflow_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		extentpassreport("Login with ninth  legal account for build out process");
+		System.out.println("Login with ninth  legal account for build out process");
+	}
+
+	@Then("^Request send to FCC of BuildOutflow Request with  ninth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_BuildOutflow_Request_with_ninth_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		legal.sendtounderreviewbuildrequestwithLegalsuer(i);
+		extentpassreport("Legal user 5 send to FCC with buildout request");
+		System.out.println("Legal user 5 send to FCC with buildout request");
+	}
+
+	@Then("^reject Under review application with ninth Legal user (\\d+)$")
+	public void reject_Under_review_application_with_ninth_Legal_user(int i) 
+	{
+		 try {
+				legal.rejectfromunderreviewwithLegaluser(i);
+				extentpassreport("ninth Legal user sucessfully reject build out application from the Underreview page");
+				System.out.println("ninth Legal user sucessfully reject build out application from the Underreview page");
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+	}
+
+	@Then("^logout ninth Legal User after rise a full BuildOutflow process$")
+	public void logout_ninth_Legal_User_after_rise_a_full_BuildOutflow_process() 
+	{
+		  closebrowser();
+			extentpassreport("Logout ninth Legal USER after succesful build out request");
+			System.out.println("Logout ninth Legal USER after succesful build out request");
+			extentreportssave();
+	}
+
+
 
 }

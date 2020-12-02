@@ -22,6 +22,7 @@ public class FullCancelationflow extends Basepage {
 	LegalUser legal = new LegalUser();
 	RequestViewPage view = new RequestViewPage();
 	LogoutPage logout = new LogoutPage();
+	
 
 	@Given("^enter url application into \"([^\"]*)\" for full cancelation flow with \"([^\"]*)\"$")
 	public void enter_url_application_into_for_full_cancelation_flow(String browsername, String environment) 
@@ -45,6 +46,7 @@ public class FullCancelationflow extends Basepage {
 		if (environment.equals("local")) {
 			market.loginwithMarketUser();
 			login.ClickYesbutton();
+			
 		}
 		else {
 			market.loginwithMarketUser();
@@ -143,10 +145,21 @@ public class FullCancelationflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		legal.CancelationrequestwithLeagluser(i);
-		extentpassreport("full cancelation request send to FCC with Legal user1 ");
-		System.out.println("full cancelation  request send to FCC with Leagal user1");
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("full cancelation request send to underreview with Legal user1 ");
+		System.out.println("full cancelation  request send to underreview with Leagal user1");
 
+	}
+	@Then("^Application Send to FCC from the Under review page with first legal user (\\d+)$")
+	public void application_Send_to_FCC_from_the_Under_review_page_with_first_legal_user(int i) 
+	{
+	    try {
+			legal.sendfcccancelationapplication(i);
+			extentpassreport("send to fcc cancelation application from under review page with first legal user");
+			System.out.println("send to fcc cancelation application from under review page with first legal user");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	@Then("^logout First Legal User after rise a full cancelation process$")
@@ -457,8 +470,8 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 		login.InitApplication();
 		noc.loginwithNOCUser();
 		noc.nocuserpopuplogin();
-		System.out.println(">>>fourth NOC user login with valid credtinals");
-		extentpassreport("fourth NOC user login with valid credtinals succesfully");
+		System.out.println(">>>fifth NOC user login with valid credtinals");
+		extentpassreport("fifth NOC user login with valid credtinals succesfully");
 
 	}
 
@@ -494,10 +507,21 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 	{
 		refreshthepage();
 		sleep();
-		legal.CancelationrequestwithLeagluser(i);
-		extentpassreport("fifth legal user  full cancelation application send to fcc");
-		System.out.println("fifth legal user  full cancelation application send to fcc");
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("fifth legal user  full cancelation application send to undereviewpage");
+		System.out.println("fifth legal user  full cancelation application send to undereviewpage");
 
+	}
+	@Then("^request send to FCC from the underreview page with fifth legal user (\\d+)$")
+	public void request_send_to_FCC_from_the_underreview_page_with_fifth_legal_user(int i) 
+	{
+	    try {
+			legal.sendtoFCCfromundereviewpage(i);
+			System.out.println("cancelation application send to FCC with Fifth legal user");
+			extentpassreport("cancelation application send to FCC with Fifth legal user ");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	@Then("^logout fifth Legal User after rise a full Cancelation process$")
@@ -618,8 +642,260 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 	public void logout_seventh_NOC_User_after_rise_a_full_Cancelation_process() {
 		closebrowser();
 		extentpassreport("Logout seventh NOC user");
-		extentreportssave();
+		
 		System.out.println(">>>Logout seventh NOC user after checking the status of the  full cancelation request");
 	}
+	@When("^seventh Legal User login with valid creditinals for Full cancelationprocess$")
+	public void seventh_Legal_User_login_with_valid_creditinals_for_Full_cancelationprocess() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>seventh Legal user login with valid credtinals");
+		extentpassreport("seventh Legal user login with valid credtinals succesfully");
+	}
+	@Then("^Full cancelation Request reject with  seventh Legal User (\\d+)$")
+	public void full_cancelation_Request_reject_with_seventh_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		legal.rejectacancelationpplicationwithLegalsuer(i);
+		extentpassreport("reject full cancelatio apllication with seventhLegal user");
+		System.out.println("reject full cancelatio apllication with seventh Legal user");  
+	}
+	@Then("^logout seventh Legal User after rise a Full cancelation process$")
+	public void logout_seventh_Legal_User_after_rise_a_Full_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout seventh legal user");
+		System.out.println(">>>Logout seventh legal user after checking the status of the  full cancelation request");
+	}
+
+	@When("^eighth Market User login with valid creditinals for full cancelation process with \"([^\"]*)\"$")
+	public void eighth_Market_User_login_with_valid_creditinals_for_full_cancelation_process_with(String arg1) 
+	 {
+		login.InitApplication();
+		market.loginwithMarketUser();
+		market.marketuserpopuplogin();
+		System.out.println("Market user8 login succesfully");
+		extentpassreport("Market user8 login succesfully");
+	}
+
+	@Then("^Rise a full Cancelation Request with eighth Market User (\\d+)$")
+	public void rise_a_full_Cancelation_Request_with_eighth_Market_User(int i)
+	{
+		refreshthepage();
+		sleep();
+		market.cancelationRequest(i);
+		System.out.println(">>>ninth Market user rise a request succesfully");
+		extentpassreport(" ninth Market user rise a cancelation request succesfully");
+	}
+
+	@Then("^logout eighth MarketUser after rise a full cancelation process$")
+	public void logout_eighth_MarketUser_after_rise_a_full_cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout ninth market user after rise a full cancelation request");
+		extentpassreport("Logout ninth market user after rise a full cancelation request");
+	}
+
+	@When("^eighth RPM User login with valid creditinals for full cancelation process$")
+	public void eighth_RPM_User_login_with_valid_creditinals_for_full_cancelation_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println(">>>eighth RPM user login with valid credtinals");
+		extentpassreport("eighth RPM user login with valid credtinals succesfully");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a Cancelation Request with eighth RPM User (\\d+)$")
+	public void check_the_status_a_Cancelation_Request_with_eighth_RPM_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the cancelation request with eighth RPM user");
+		extentpassreport("eighth RPM user check the " + statusoftheapplication + "of the application");
+	    
+	}
+
+	@Then("^logout eighth RPM User after rise a full cancelation process$")
+	public void logout_eighth_RPM_User_after_rise_a_full_cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout eighth RPM user");
+		extentpassreport(">>>Logout eighth RPM user");
+	}
+
+	@When("^eighth NOC User login with valid creditinals for full cancelation process$")
+	public void eighth_NOC_User_login_with_valid_creditinals_for_full_cancelation_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println(">>>eighth NOC user login with valid credtinals");
+		extentpassreport("eighth NOC user login with valid credtinals succesfully");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a Cancelation Request with eighth NOC User (\\d+)$")
+	public void check_the_status_a_Cancelation_Request_with_eighth_NOC_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the cancelation request with eighth NOC user");
+		extentpassreport("eight NOC user check the " + statusoftheapplication + "of the application");
+	}
+
+	@Then("^logout eighth NOC User after rise a full cancelation process$")
+	public void logout_eighth_NOC_User_after_rise_a_full_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout eighth NOC user");
+		System.out.println(">>>Logout eighth NOC user after checking the status of the  full cancelation request");
+
+	}
+
+	@When("^eighth Legal User login with valid creditinals for full cancelation process$")
+	public void eighth_Legal_User_login_with_valid_creditinals_for_full_cancelation_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>eighth Legal user login with valid credtinals");
+		extentpassreport("eighth Legal user login with valid credtinals succesfully");
+
+	}
+
+	@Then("^Request send to FCC of full cancelation process with  eighth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_full_cancelation_process_with_eighth_Legal_User(int i)
+	{
+		refreshthepage();
+		sleep();
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("full cancelation request send to undereview with eighth Legal user ");
+		System.out.println("full cancelation  request send to undereview with eighth Leagal user");
+	}
+
+	@Then("^Reject cancelation request in from under review tab with eighth Legal user (\\d+)$")
+	public void reject_cancelation_request_in_from_under_review_tab_with_eighth_Legal_user(int i)
+	{
+	    try {
+			legal.cancelationrejectfromunderreviewpage(i);
+			extentpassreport("cancelation reject from the underreviewpage with Eigth legal user");
+			System.out.println("cancelation reject from the underreviewpage with Eigth legal user");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Then("^logout eighth Legal User after rise a full cancelation process$")
+	public void logout_eighth_Legal_User_after_rise_a_full_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout eighth Legal user");
+		System.out.println(">>>Logout eighth Legal user after checking the status of the  full cancelation request");
+	}
+
+	@When("^ninth RPM User login with valid creditinals for full Cancelation process$")
+	public void ninth_RPM_User_login_with_valid_creditinals_for_full_Cancelation_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println(">>>ninth RPM user login with valid credtinals");
+		extentpassreport("ninth RPM user login with valid credtinals succesfully");
+
+	}
+
+	@Then("^Rise a full Cancelation Request with  ninth RPM User (\\d+)$")
+	public void rise_a_full_Cancelation_Request_with_ninth_RPM_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.fullcancelationwithRPMuser(i);
+		System.out.println(">>>ninth RPM user rise a request succesfully");
+		extentpassreport(" ninth RPM user rise a cancelation request succesfully");
+	}
+
+	@Then("^logout  ninth RPM User after rise a full Cancelation process$")
+	public void logout_ninth_RPM_User_after_rise_a_full_Cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout ninth RPM user");
+		extentpassreport(">>>Logout ninth RPM user");
+	}
+
+	@When("^ninth NOC User login with valid creditinals for full Cancelation process$")
+	public void ninth_NOC_User_login_with_valid_creditinals_for_full_Cancelation_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println(">>>ninth NOC user login with valid credtinals");
+		extentpassreport("ninth NOC user login with valid credtinals succesfully");
+
+	}
+
+	@Then("^check the \"([^\"]*)\" status a full Cancelation Request with  ninth NOC User (\\d+)$")
+	public void check_the_status_a_full_Cancelation_Request_with_ninth_NOC_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the cancelation request with ninth NOC user");
+		extentpassreport("ninth NOC user check the " + statusoftheapplication + "of the application");
+	}
+
+	@Then("^logout  ninth NOC User after rise a full Cancelation process$")
+	public void logout_ninth_NOC_User_after_rise_a_full_Cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout ninth NOC user");
+		System.out.println(">>>Logout ninth NOC user after checking the status of the  full cancelation request");
+	}
+
+	@When("^ninth Legal User login with valid creditinals for full Cancelation process$")
+	public void ninth_Legal_User_login_with_valid_creditinals_for_full_Cancelation_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		extentpassreport("Login with ninth Legal user");
+		System.out.println("Login with ninth Legal user");
+	}
+
+	@Then("^Request send to FCC of full Cancelation Request with  ninth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_full_Cancelation_Request_with_ninth_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("ninth legal user  full cancelation application send to underreview");
+		System.out.println("ninth legal user  full cancelation application send to fcc");
+	}
+
+	@Then("^request reject from the underreview page with ninth legal user (\\d+)$")
+	public void request_reject_from_the_underreview_page_with_ninth_legal_user(int i) 
+	{
+		try {
+			legal.cancelationrejectfromunderreviewpage(i);
+			extentpassreport("cancelation reject from the underreviewpage with ninth legal user");
+			System.out.println("cancelation reject from the underreviewpage with ninth  legal user");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Then("^logout ninth Legal User after rise a full Cancelation process$")
+	public void logout_ninth_Legal_User_after_rise_a_full_Cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout ninth Legal user");
+		System.out.println(">>>Logout ninth Legal user after checking the status of the  full cancelation request");
+		extentreportssave();
+	}
+
 
 }

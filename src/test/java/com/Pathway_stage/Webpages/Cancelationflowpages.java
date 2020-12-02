@@ -12,7 +12,7 @@ public class Cancelationflowpages extends Basepage {
 	private By partialcancelation = By.xpath("//label[contains(text(),'Partial Cancellation')]");
 	private By fullCancelation = By.xpath("//label[contains(text(),'Full Cancellation')]");
 	private By txidfieldbox = By.xpath("//input[@placeholder='Enter TX Site ID']");
-	private By rxidfieldbox = By.xpath("//input[@placeholder='Enter RX Site ID']");
+	private By rxidfieldbox = By.xpath("//input[@placeholder='Enter RX Site ID']"); 
 	private By searchaccountforcancelation = By.cssSelector("#search-button");
 	private By CancelationchecklistboxforMU = By.xpath("//div[@class='slick-cell l0 r0 true']//label");
 	private By reasonlbl = By.className("reject-text");
@@ -28,10 +28,14 @@ public class Cancelationflowpages extends Basepage {
 	private By RRMuserchecklistbox = By.xpath("//input[@type='checkbox']");
 	private By NOCuserchecklistbox = By.xpath("//div[@class='slick-cell l0 r0 true']//label");
 	private By Leagluserchecklistbox = By.xpath("//input[@type='checkbox']");
-	private By sendtoFCCbutton = By.xpath("(.//*[@class='btn-grid approve ng-star-inserted'])[1]");
+	private By sendtounderreviewbutton = By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
 	private By legaluserconfirmationbutton = By.xpath("(.//*[text()='YES'])[1]");
 	private By legaluserrejectbutton =By.xpath("(.//*[@class='btn-grid reject ng-star-inserted'])[1]");
 	private By rpmconfirmationforapprovedbutton = By.xpath("(//div[@class='modal-footer']/button[text()='YES'])[1]");
+	private By underreviewpage = By.xpath("//a[normalize-space()='UNDER REVIEW (7)']");
+	private By sendtoFCCtab = By.xpath("//a[normalize-space()='SUBMITTED TO FCC (86)']");
+	private By sendtofccbutton =By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
+	private By rejectbuttonforunderreviewpage = By.xpath("//button[normalize-space()='REJECT']");
 	RequestViewPage view = new RequestViewPage();
 
 	public void riseCancelationRequestWithMUuser(String Txid, String Rxid) {
@@ -177,7 +181,20 @@ public class Cancelationflowpages extends Basepage {
 		click(rejectconfirmationbutton);
 		sleep();
 	}
+	public void clickUnderreviewtab()
+	{
+		elementclickbyjs(underreviewpage);
+		sleep();
+	}
 
+	public void Underreviewapplicationsendtofcc()
+	{
+		
+		elementclickbyjs(RPMuserchecklistbox);
+		elementclickbyjs(sendtofccbutton);
+		elementclickbyjs(legaluserconfirmationbutton);
+		
+	}
 	public void approvecancelationwithRRMuser() {
 		elementclickbyjs(RPMuserchecklistbox);
 		click(approvebutton);
@@ -215,9 +232,9 @@ public class Cancelationflowpages extends Basepage {
 		sleep();
 	}
 
-	public void sendtoFCCwithLegaluser() {
+	public void sendtounderreviewwithLegaluser() {
 		elementclickbyjs(RPMuserchecklistbox);
-		click(sendtoFCCbutton);
+		click(sendtounderreviewbutton);
 		sleep();
 		click(legaluserconfirmationbutton);
 		sleep();
@@ -228,6 +245,23 @@ public class Cancelationflowpages extends Basepage {
 		elementclickbyjs(legaluserrejectbutton);
 		sleep();
 		elementclickbyjs(rejectconfirmationbutton);
+		
+	}
+	public void sendtofccfromundereview()
+	{
+		elementclickbyjs(RPMuserchecklistbox);
+		elementclickbyjs(sendtofccbutton);
+		sleep();
+		click(legaluserconfirmationbutton);
+		sleep();
+	}
+	public void Sendtounderreviewforrejection()
+	{
+		elementclickbyjs(RPMuserchecklistbox);
+		elementclickbyjs(rejectbuttonforunderreviewpage);
+		sleep();
+		elementclickbyjs(legaluserconfirmationbutton);
+		sleep();
 		
 	}
 }

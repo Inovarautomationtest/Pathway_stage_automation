@@ -57,7 +57,7 @@ public class PartialCancelationsflow extends Basepage {
 
 	@Then("^Rise a Partial Cancelation Request with first Market User (\\d+)$")
 	public void rise_a_Partial_Cancelation_Request_with_first_Market_User(int i) {
-		//market.partialcancelation(i);
+		market.partialcancelation(i);
 		System.out.println(">>>Market user rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request");
@@ -90,7 +90,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with First RPM user");
 		extentpassreport("Fisrt RPM user check the " + statusoftheapplication + "of the application");
 
@@ -121,7 +121,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the cancelation request with First NOC user");
 		extentpassreport("Fisrt NOC user check the " + statusoftheapplication + "of the application");
 
@@ -150,10 +150,22 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-	//	legal.CancelationrequestwithLeagluser(i);
-		extentpassreport("partial cancelation request send to FCC with Legal user1 ");
-		System.out.println("partial cancelation  request send to FCC with Leagal user1");
+	legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("partial cancelation request send to underreview with Legal user1 ");
+		System.out.println("partial cancelation  request send to underreview with Leagal user1");
 
+	}
+	@Then("^Partial Cancelation application send to FCC from the under review page with First Legal user (\\d+)$")
+	public void partial_Cancelation_application_send_to_FCC_from_the_under_review_page_with_First_Legal_user(int i) 
+	{
+		try {
+			legal.sendfcccancelationapplication(i);
+			extentpassreport("send to fcc partial cancelation application from under review page with first legal user");
+			System.out.println("send to fcc partial cancelation application from under review page with first legal user");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	    
 	}
 
 	@Then("^logout First Legal User after rise a Partial cancelation process$")
@@ -177,7 +189,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//market.partialcancelation(i);
+		market.partialcancelation(i);
 		System.out.println(">>>Market user2 rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user2");
@@ -209,7 +221,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-	//	rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with second RPM user");
 		extentpassreport("second RPM user check the " + statusoftheapplication + "of the application");
 
@@ -238,7 +250,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//market.partialcancelation(i);
+		market.partialcancelation(i);
 		System.out.println(">>>Market user3 rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user3");
@@ -267,7 +279,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with third RPM user");
 		extentpassreport("third RPM user check the " + statusoftheapplication + "of the application");
 
@@ -296,7 +308,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the cancelation request with third NOC user");
 		extentpassreport("third NOC user check the " + statusoftheapplication + "of the application");
 
@@ -326,7 +338,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//market.partialcancelation(i);
+		market.partialcancelation(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user4");
 		extentpassreport("Market user4 rise a partial cancelation request succesfully");
 	}
@@ -355,7 +367,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-	//	rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+	rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with fourth RPM user");
 		extentpassreport("fourth RPM user check the " + statusoftheapplication + "of the application");
 
@@ -382,7 +394,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with fourth NOC user");
 		extentpassreport("fourth NOC user check the " + statusoftheapplication + "of the application");
 
@@ -412,7 +424,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//legal.rejectrenewalapplicationwithLegalsuer(i);
+		legal.rejectrenewalapplicationwithLegalsuer(i);
 		extentpassreport("reject partial cancelation application with Legal user");
 		System.out.println("reject partial cancelation application with Legal user");
 	   
@@ -444,7 +456,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//rpm.partialcancelationwithRPMuser(i);
+		rpm.partialcancelationwithRPMuser(i);
 		System.out.println(">>>fifth RPM user rise a request succesfully");
 		extentpassreport(" fifth RPM user rise a cancelation request succesfully");
 	    
@@ -475,7 +487,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with fifth NOC user");
 		extentpassreport("fifth NOC user check the " + statusoftheapplication + "of the application");
 	   
@@ -506,11 +518,19 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		legal.CancelationrequestwithLeagluser(i);
-		extentpassreport("fifth legal user  partial cancelation application send to fcc");
-		System.out.println("fifth legal user  partial cancelation application send to fcc");
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("fifth legal user  partial cancelation application send to undereview");
+		System.out.println("fifth legal user  partial cancelation application send to underreview");
 	   
 	}
+	@Then("^Partial cancelation Application send to FCC from The under review page with Legal user (\\d+)$")
+	public void partial_cancelation_Application_send_to_FCC_from_The_under_review_page_with_Legal_user(int i) 
+	{
+		legal.sendfcccancelationapplication(i);
+		extentpassreport("send to fcc cancelation application from under review page with fifth legal user");
+		System.out.println("send to fcc cancelation application from under review page with fifth legal user");
+	}
+
 
 	@Then("^logout fifth Legal User after rise a Partial Cancelation process$")
 	public void logout_fifth_Legal_User_after_rise_a_Partial_Cancelation_process() 
@@ -635,9 +655,264 @@ public class PartialCancelationsflow extends Basepage {
 		closebrowser();
 		extentpassreport("Logout seventh NOC user");
 		System.out.println(">>>Logout seventh NOC user after checking the status of the  partial cancelation request");
-		extentreportssave();
+		
+	   
+	}
+	
+
+	
+	@When("^seventh Legal User login with valid creditinals for partial cancelationprocess$")
+	public void seventh_Legal_User_login_with_valid_creditinals_for_partial_cancelationprocess() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>seventh NOC user login with valid credtinals");
+		extentpassreport("seventh NOC user login with valid credtinals succesfully");
+	}
+
+	@Then("^partial cancelation Request reject with  seventh Legal User (\\d+)$")
+	public void partial_cancelation_Request_reject_with_seventh_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		legal.rejectrenewalapplicationwithLegalsuer(i);
+		extentpassreport("reject partial cancelation application with seventh Legal user");
+		System.out.println("reject partial cancelation application with seventh Legal user");
+	}
+
+	@Then("^logout seventh Legal User after rise a partial cancelation process$")
+	public void logout_seventh_Legal_User_after_rise_a_partial_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout seventh legal user");
+		System.out.println(">>>Logout seventh legal user after checking the status of the  partial cancelation request");
+	}
+
+	@When("^eigth Market User login with valid creditinals for Partial cancelation process$")
+	public void eigth_Market_User_login_with_valid_creditinals_for_Partial_cancelation_process_with() 
+	{
+		login.InitApplication();
+		market.loginwithMarketUser();
+		market.marketuserpopuplogin();
+		System.out.println("eigth Market user login succesfully");
+		extentpassreport("eight Market user2 login succesfully");
+	}
+
+	@Then("^Rise a Partial Cancelation Request with eigth Market User (\\d+)$")
+	public void rise_a_Partial_Cancelation_Request_with_eigth_Market_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		market.partialcancelation(i);
+		System.out.println(">>>Market user8 rise a request succesfully");
+		System.out.println(">>> check the status of the partial cancelation request with market user2");
+		extentpassreport("Market user8 rise a partial cancelation request succesfully");
+
+	}
+
+	@Then("^logout eigth MarketUser after rise a Partial cancelation process$")
+	public void logout_eigth_MarketUser_after_rise_a_Partial_cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout eighth market user after rise a partial cancelation request");
+		extentpassreport("Logout eighth market user after rise a partial cancelation request");
+	}
+
+	@When("^eigth RPM User login with valid creditinals for Partial cancelation process$")
+	public void eigth_RPM_User_login_with_valid_creditinals_for_Partial_cancelation_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println(">>>eighth RPM user login with valid credtinals");
+		extentpassreport("eighth RPM user login with valid credtinals succesfully");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a  Partial Cancelation Request with eigth RPM User (\\d+)$")
+	public void check_the_status_a_Partial_Cancelation_Request_with_eigth_RPM_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the partial cancelation request with second RPM user");
+		extentpassreport("second RPM user check the " + statusoftheapplication + "of the application");
+	    
+	}
+
+	@Then("^logout eigth RPM User after rise a Partial cancelation process$")
+	public void logout_eigth_RPM_User_after_rise_a_Partial_cancelation_process() 
+	{
+		 closebrowser();
+			extentpassreport("Logout eighth RPM user");
+			System.out.println(">>>Logout eighth RPM user after checking the status of the  partial cancelation request");
+	}
+
+	@When("^eigth NOC User login with valid creditinals for Partial cancelation process$")
+	public void eigth_NOC_User_login_with_valid_creditinals_for_Partial_cancelation_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println(">>>eighth NOC user login with valid credtinals");
+		extentpassreport("eighth NOC user login with valid credtinals succesfully");
+	}
+
+	@Then("^check the \"([^\"]*)\" status a Partial Cancelation Request with eigth NOC User (\\d+)$")
+	public void check_the_status_a_Partial_Cancelation_Request_with_eigth_NOC_User(String statusoftheapplication, int i) 
+	{
+		refreshthepage();
+		sleep();
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the cancelation request with eighth NOC user");
+		extentpassreport("eighth NOC user check the " + statusoftheapplication + "of the application");
+	}
+
+	@Then("^logout eigth NOC User after rise a Partial cancelation process$")
+	public void logout_eigth_NOC_User_after_rise_a_Partial_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout eighth NOC user");
+		System.out.println(">>>Logout eighth NOC user after checking the status of the  partial cancelation request");
+	}
+
+	@When("^eigth Legal User login with valid creditinals for Partial cancelation process$")
+	public void eigth_Legal_User_login_with_valid_creditinals_for_Partial_cancelation_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>eighth Legal user login with valid credtinals");
+		extentpassreport("eighth Legal user login with valid credtinals succesfully");
+	}
+
+	@Then("^Request send to FCC of Partial cancelation process with  eigth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_Partial_cancelation_process_with_eigth_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+	legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("partial cancelation request send to FCC with eighth Legal user ");
+		System.out.println("partial cancelation  request send to FCC with eighth Legal user");
+	}
+
+	@Then("^application rejected from the Under review page for Partial cancelation with eigth legal user (\\d+)$")
+	public void application_rejected_from_the_Under_review_page_for_Partial_cancelation_with_eigth_legal_user(int i) throws Throwable {
+	    try {
+			legal.cancelationrejectfromunderreviewpage(i);
+			System.out.println("partial cancelation application rejection from under review page with eigth legal user");
+			extentpassreport("partial cancelation application rejection from under review page with eigth legal user");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Then("^logout eigth Legal User after rise a Partial cancelation process$")
+	public void logout_eigth_Legal_User_after_rise_a_Partial_cancelation_process() 
+	{
+		closebrowser();
+		extentpassreport("Logout eighth Legal user");
+		System.out.println(">>>Logout eighth Legal user after checking the status of the  partial cancelation request");
+	}
+
+	@When("^ninth RPM User login with valid creditinals for Partial Cancelation process$")
+	public void ninth_RPM_User_login_with_valid_creditinals_for_Partial_Cancelation_process() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println(">>>ninth RPM user login with valid credtinals");
+		extentpassreport("ninth RPM user login with valid credtinals succesfully");
+	}
+
+	@Then("^Rise a Partial Cancelation Request with  ninth RPM User (\\d+)$")
+	public void rise_a_Partial_Cancelation_Request_with_ninth_RPM_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		rpm.partialcancelationwithRPMuser(i);
+		System.out.println(">>>ninth RPM user rise a request succesfully");
+		extentpassreport(" ninth RPM user rise a cancelation request succesfully");
+	}
+
+	@Then("^logout  ninth RPM User after rise a Partial Cancelation process$")
+	public void logout_ninth_RPM_User_after_rise_a_Partial_Cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout ninth RPM user");
+		extentpassreport(">>>Logout ninth RPM user");
+	}
+
+	@When("^ninth NOC User login with valid creditinals for Partial Cancelation process$")
+	public void ninth_NOC_User_login_with_valid_creditinals_for_Partial_Cancelation_process() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println(">>>ninth NOC user login with valid credtinals");
+		extentpassreport("ninth NOC user login with valid credtinals succesfully");
+	    
+	}
+
+	@Then("^check the \"([^\"]*)\" status a Partial Cancelation Request with  ninth NOC User (\\d+)$")
+	public void check_the_status_a_Partial_Cancelation_Request_with_ninth_NOC_User(String statusoftheapplication, int i)
+	{
+		refreshthepage();
+		sleep();
+		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		System.out.println(">>>Check the status of the partial cancelation request with ninth NOC user");
+		extentpassreport("ninth NOC user check the " + statusoftheapplication + "of the application");
+	    
+	}
+
+	@Then("^logout  ninth NOC User after rise a Partial Cancelation process$")
+	public void logout_ninth_NOC_User_after_rise_a_Partial_Cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout ninth NOC user");
+		extentpassreport(">>>Logout ninth NOC user");
 	   
 	}
 
+	@When("^ninth Legal User login with valid creditinals for Partial Cancelation process$")
+	public void ninth_Legal_User_login_with_valid_creditinals_for_Partial_Cancelation_process() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>ninth NOC user login with valid credtinals");
+		extentpassreport("ninth NOC user login with valid credtinals succesfully");
+	}
+
+	@Then("^Request send to FCC of Partial Cancelation Request with  ninth Legal User (\\d+)$")
+	public void request_send_to_FCC_of_Partial_Cancelation_Request_with_ninth_Legal_User(int i) 
+	{
+		refreshthepage();
+		sleep();
+		legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+		extentpassreport("ninth legal user  partial cancelation application send to under review");
+		System.out.println("ninth legal user  partial cancelation application send to under review ");
+	}
+
+	@Then("^Partial cancelation Application reject from The under review page with ninth Legal user (\\d+)$")
+	public void partial_cancelation_Application_reject_from_The_under_review_page_with_ninth_Legal_user(int i)  {
+		  try {
+				legal.cancelationrejectfromunderreviewpage(i);
+				System.out.println("partial cancelation application rejection from under review page with ninth legal user");
+				extentpassreport("partial cancelation application rejection from under review page with ninth legal user");
+			} catch (Exception e) {
+				// TODO: handle exception
+			} 
+	}
+
+	@Then("^logout ninth Legal User after rise a Partial Cancelation process$")
+	public void logout_ninth_Legal_User_after_rise_a_Partial_Cancelation_process() 
+	{
+		closebrowser();
+		System.out.println(">>>Logout ninth legal user");
+		extentpassreport(">>>Logout ninth legal user");
+		extentreportssave();
+	   
+	}
 
 }

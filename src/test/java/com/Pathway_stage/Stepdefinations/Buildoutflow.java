@@ -138,7 +138,7 @@ System.out.println(">>>Login with Legal user with Valid credtinals for Build out
 
 @Then("^Request send to FCC with Legal user FOR BUildOutrequest with (\\d+)$")
 public void request_send_to_FCC_with_Legal_user_FOR_BUildOutrequest(int i) throws Throwable {
-   legaluser.sendtoFCCbuildrequestwithLegalsuer(i);
+  // legaluser.sendtoFCCbuildrequestwithLegalsuer(i);
    extentpassreport("Build out request sent to FCC with Legal user");
    System.out.println(">>>Build out request sent to FCC with Legal user");
 }

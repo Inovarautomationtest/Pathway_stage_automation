@@ -93,7 +93,7 @@ driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		try {
 			Thread.sleep(5000);
 			Screen screen = new Screen();
-			screen.type("F:\\Pathway_finalscript\\Pathway_stage\\Screenshot (364).png", emailforpopup);
+			screen.type("D:\\Pathway_stage\\src\\Pathway_Satge\\Resources\\Screenshot (364).png", emailforpopup);
 			Thread.sleep(4000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_TAB);
@@ -108,13 +108,13 @@ driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		try {
 			Thread.sleep(2000);
 			Screen screen1 = new Screen();
-			screen1.type("F:\\Pathway_finalscript\\Pathway_stage\\Screenshot (364).png", passwordforpopup);
+			screen1.type("D:\\Pathway_stage\\src\\Pathway_Satge\\Resources\\Screenshot (364).png", passwordforpopup);
 
 			Thread.sleep(3000);
 
 			Screen screen2 = new Screen();
 			Thread.sleep(3000);
-			screen2.click("F:\\Pathway_finalscript\\Pathway_stage\\Screenshot (366).png");
+			screen2.click("D:\\Pathway_stage\\src\\Pathway_Satge\\Resources\\Screenshot (366).png");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -37,15 +37,43 @@ public class LegalUser extends Basepage
 		
 	}
 	
-	public void CancelationrequestwithLeagluser( int i)
+	public void CancelationrequestwithLeaglusertosendtounderreview( int i)
 	{
 		refreshthepage();
 		sleep();
 		homepage.cancelationbutton();
 		view.requestforcancelationview(i);
-		cancel.sendtoFCCwithLegaluser();
+		cancel.sendtounderreviewwithLegaluser();
 	}
-	
+	public void sendfcccancelationapplication(int i)
+	{
+		refreshthepage();
+		sleep();
+		cancel.clickUnderreviewtab();
+		view.requestforcancelationview(i);
+		cancel.sendtofccfromundereview();
+		
+	}
+	public void cancelationrejectfromunderreviewpage(int i)
+	{
+		refreshthepage();
+		sleep();
+		cancel.clickUnderreviewtab();
+		view.requestforcancelationview(i);
+		cancel.Sendtounderreviewforrejection();
+		
+	}
+	public void CancelationrequestwithLeagluserdeadlineanalsyer(String txiddata)
+	{
+		refreshthepage();
+		sleep();
+		
+		homepage.cancelationbutton();
+		view.requestforcancelationviewdeadlineanalsyer(txiddata);
+		cancel.sendtounderreviewwithLegaluser();
+		view.requestforcancelationviewdeadlineanalsyer(txiddata);
+		cancel.Underreviewapplicationsendtofcc();
+	}
 	public void renewalrequestsendtoFCCwithLegalsuer(int i)
 	{
 		try {
@@ -53,20 +81,52 @@ public class LegalUser extends Basepage
 			sleep();
 			homepage.renewalbutton();
 			view.renwealrequestview(i);
-			renewalpage.sendtoFCCforrenewalconnection();
+			renewalpage.sendtounderrenewalforrenewalconnection();
 		} catch (StaleElementReferenceException e) {
 			
 		}
 		
+		
 	}
-	public void sendtoFCCbuildrequestwithLegalsuer(int i)
+	public void renewalsendtofcc(int i)
+	{
+		renewalpage.Clickunderreviewtab();
+		view.renwealrequestview(i);
+		renewalpage.sendtofccfromundereviewpage();
+	}
+	public void renewalrejectfromunderviewpage(int i)
+	{
+		renewalpage.Clickunderreviewtab();
+		view.renwealrequestview(i);
+		renewalpage.rejectionfromunderreview(); 
+		
+	}
+	public void sendtounderreviewbuildrequestwithLegalsuer(int i)
 	{
 		refreshthepage();
 		sleep();
 		homepage.Buildoutbutton();
 		sleep();
 		view.requestviewforlegal(i);
-		buildout.sendtoFCCbuildoutrequest();
+		buildout.sendtoundereviewbuildoutrequest();
+		
+	}
+	public void sendtoFCCfromundereviewpage(int i)
+	{
+		refreshthepage();
+		sleep();
+		buildout.clickunderreviewtab();
+		view.requestviewforlegal(i);
+		buildout.sendtoFCCfromundereview();
+	}
+	
+	public void rejectfromunderreviewwithLegaluser(int i)
+	{
+		refreshthepage();
+		sleep();
+		buildout.clickunderreviewtab();
+		view.requestviewforlegal(i);
+		buildout.Rejectfromunderreviewpage();
 		
 	}
 	public void rejectacancelationpplicationwithLegalsuer(int i)
@@ -76,6 +136,15 @@ public class LegalUser extends Basepage
 		homepage.cancelationbutton();
 		sleep();
 		view.requestforcancelationview(i);
+		cancel.rejectwithlegalsuer();
+	}
+	public void rejectacancelationpplicationwithLegalsuerfordeadlineanalyser(String txiddata)
+	{
+		refreshthepage();
+		sleep();
+		
+		homepage.cancelationbutton();
+		view.requestforcancelationviewdeadlineanalsyer(txiddata);
 		cancel.rejectwithlegalsuer();
 	}
 	

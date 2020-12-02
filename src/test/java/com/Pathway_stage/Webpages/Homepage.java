@@ -13,6 +13,7 @@ public class Homepage extends Basepage
 	 private By Buildooutbuuton = By.xpath("//div[contains(text(),'Buildout')]");
 	public By accountlbl = By.className("dashboard-list-cards-header");
 		private By dashboardbutton = By.xpath("(.//*[@class='menu-items'])[1]");
+		private By lookupbutton =By.xpath("(//div[@class='menu-items'])[6]");
 		
 		private By Deadlineanalsyerbutton = By.xpath("(.//*[@class='menu-items'])[7]");
 		
@@ -55,8 +56,11 @@ public class Homepage extends Basepage
 		 
 		 try {
 			
+			 refreshthepage();
+			 sleep();
 		
 			 scrollDown();
+			/* clicklookuptab();*/
 			 sleep();
 			 explicitWaitClickable(Deadlineanalsyerbutton);
 			 sleep();
@@ -64,6 +68,11 @@ public class Homepage extends Basepage
 			// TODO: handle exception
 		}
 		 
+	 }
+	 public void clicklookuptab()
+	 {
+		 explicitWaitClickable(lookupbutton);
+		 sleep();
 	 }
 	 public void checkloginfunctionlaity()
 	 {

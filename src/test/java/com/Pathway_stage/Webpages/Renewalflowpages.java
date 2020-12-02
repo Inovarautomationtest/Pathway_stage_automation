@@ -18,7 +18,7 @@ public class Renewalflowpages extends Basepage
 	private By renewalconfirmationbutton = By.xpath("(.//*[text()='YES'])[1]");
 	private By okbuttonforrenewal = By.xpath("(.//*[text()='OK'])[1]");
 	private By MDUchecklistboxforrenewal = By.xpath("//input[@type='checkbox']");
-	private By approverenewalbutton = By.xpath("//button[contains(text(),'RENEW')]");
+	private By approverenewalbutton = By.xpath("//button[@class='btn-grid approve ng-star-inserted']");
 	private By rejectrenewalbutton = By.xpath("(.//*[@class='btn-grid reject ng-star-inserted'])[1]");
 	private By rejectreasonforrenewal = By.xpath(".//*[@class='w-100 ng-pristine ng-valid ng-touched']");
 	private By rejectconfirmationbutton = By.xpath("(.//*[text()='YES'])[2]");
@@ -26,9 +26,12 @@ public class Renewalflowpages extends Basepage
 	private By RPMchecklistforrenewal = By.xpath("//input[@type='checkbox']");
 	private By NOCchecklistforrenewal = By.xpath("//input[@type='checkbox']");
 	private By Legaluserchecklistforrenewal =By.xpath("//input[@type='checkbox']");
-	private By sendtofccforrenewalbutton = By.xpath("//button[contains(text(),' Send To FCC ')]");
+	private By sendtofccforrenewalbutton = By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
 	private By legaluserconfirmationbutton = By.xpath("(.//*[text()='YES'])[1]");
-	private By legaluserrejeectbutton = By.xpath("(.//*[@class='btn-grid reject ng-star-inserted'])[1]");
+	private By legaluserrejeectbutton = By.xpath("//button[@class='btn-grid reject ng-star-inserted']");
+	private By sendtounderreeviewbutton = By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
+	private By underreviewtab = By.xpath("//a[normalize-space()='UNDER REVIEW (4)']");
+	private By rejectbuttonfromunderreview  = By.xpath("//button[normalize-space()='REJECT']");
 	
 	public void renewalrequestwithmarketuser(String txid, String rxid)
 	{
@@ -142,7 +145,7 @@ public class Renewalflowpages extends Basepage
 	public void renewlapprovewithNOCuser()
 	{
 		elementclickbyjs(NOCchecklistforrenewal);
-		click(approverenewalbutton);
+		explicitWaitClickable(approverenewalbutton);
 		sleep();
 		click(renewalconfirmationbutton);
 		sleep();
@@ -158,15 +161,37 @@ public class Renewalflowpages extends Basepage
       click(rejectconfirmationbutton);
       sleep();
 }
-	public void sendtoFCCforrenewalconnection()
+	public void sendtounderrenewalforrenewalconnection()
 	{
 		elementclickbyjs(Legaluserchecklistforrenewal);
-		click(sendtofccforrenewalbutton);
+		click(sendtounderreeviewbutton);
 		sleep();
 		click(legaluserconfirmationbutton);
 		sleep();
 	}
-	
+	public void Clickunderreviewtab()
+	{
+		elementclickbyjs(underreviewtab);
+		sleep();
+	}
+	public void sendtofccfromundereviewpage()
+	{
+		elementclickbyjs(Legaluserchecklistforrenewal);
+		sleep();
+		elementclickbyjs(sendtofccforrenewalbutton);
+		sleep();
+		elementclickbyjs(legaluserconfirmationbutton);
+		sleep();
+	}
+	public void rejectionfromunderreview()
+	{
+		elementclickbyjs(Legaluserchecklistforrenewal);
+		sleep();
+		elementclickbyjs(rejectbuttonfromunderreview);
+		sleep();
+		elementclickbyjs(legaluserconfirmationbutton);
+		sleep();
+	}
 	public void rejectwithLegaluser()
 	{
 		elementclickbyjs(Legaluserchecklistforrenewal);

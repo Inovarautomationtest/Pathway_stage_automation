@@ -55,6 +55,22 @@ public class NOCUser extends Basepage
 			cancel.rejectcancelationwithNOCuser();
 		}
 	}
+	public void CancelationrequestwithNOCuserfordeadlineanlayser(String statusoftheapplication, String txiddata)
+	{
+		refreshthepage();
+		sleep();
+		homepage.cancelationbutton();
+		view.requestforcancelationviewdeadlineanalsyer(txiddata);
+		
+		
+		if (statusoftheapplication.equals("Approved"))
+		{
+			cancel.approvecancelationwithNOCuser();
+		}
+		else {
+			cancel.rejectcancelationwithNOCuser();
+		}
+	}
 	public void renewalrequestwithNOCuser(String statusoftheapplication, int i)
 	{
 		refreshthepage();

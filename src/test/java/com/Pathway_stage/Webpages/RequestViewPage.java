@@ -117,6 +117,26 @@ public class RequestViewPage extends Basepage
 		}
 		
 	}
+	public void requestforcancelationviewdeadlineanalsyer(String txiddata)
+	{
+		try {
+			WebElement txbtn =  driver.findElement(By.xpath("//span[contains(text(),'TX Site ID')]" ));
+		    
+	        JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+	        executor1.executeScript("arguments[0].click();", txbtn);
+	        sleep();
+	       
+	       
+	        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[4]"));
+	        WebDriverWait wait = new WebDriverWait(driver, 15);
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[4]")));
+	        element.sendKeys(txiddata);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 	public void renwealrequestview(int i)
 	{
 		
@@ -155,10 +175,23 @@ public class RequestViewPage extends Basepage
         executor1.executeScript("arguments[0].click();", txbtn);
         sleep();
        
-        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[3]"));
+        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[4]"));
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[3]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[4]")));
         element.sendKeys(data.getColumn_1(i));
+	}
+	public void requestviewforlegalfordeadlineanalsyer(String txiddata)
+	{
+		WebElement txbtn =  driver.findElement(By.xpath("(.//*[@class='slick-column-name'])[4]" ));
+	    
+        JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+        executor1.executeScript("arguments[0].click();", txbtn);
+        sleep();
+       
+        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[4]"));
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[4]")));
+        element.sendKeys(txiddata);
 	}
 	public void requestvieww(int i)
 	{

@@ -14,13 +14,14 @@ public class DeadlineAnalyserpage extends Basepage
 	private By cancelationbuttton =By.xpath(".//*[@name='createCancellationRequestBtn:0']");
 	private By Exportallbutton = By.xpath(".//*[@class='btn-grid mr-5']");
 	private By rxside = By.xpath("(.//*[@class='ui-widget-content slick-row even active'])[1]");
-	private By selectdropdownforcancelation = By.xpath("/html[1]/body[1]/app-root[1]/app-deadline-analyser[1]/div[1]/div[1]/div[2]/div[1]/div[2]/section[1]/div[1]/div[1]/app-license-expiration-data-grid[1]/div[3]/div[1]/div[1]/div[2]/div[1]/select[1]");
+	private By selectdropdownforcancelation = By.xpath("//select[@class='w-100 ng-untouched ng-pristine ng-valid']");
 	private By clickyesbutton = By.xpath("//button[contains(text(),'YES')]");
-	private By gettingnewtxid =By.xpath(".//*[@class='slick-cell l1 r1 selected true active']");
+	private By gettingnewtxid =By.xpath("(.//*[@class='slick-cell l0 r0 true'])[1]/following-sibling::div[@class='slick-cell l1 r1 true']");
+	private By okbutton =By.xpath(".//*[@class='btn-grid approve']");
 	
 
 	
-	public void RisecancelationRequestwithMarketuser(String fromdate, String todate)
+	public String RisecancelationRequestwithMarketuser(String fromdate, String todate)
 	
 	{
 		
@@ -28,7 +29,8 @@ public class DeadlineAnalyserpage extends Basepage
 		enterText(entertodate, todate);
 		sleep();
 		enter();
-		enter();
+		sleep();
+		String txidtext =getText(gettingnewtxid);
 		sleep();
 		click(firstcheckbox);
 		sleep();
@@ -36,10 +38,11 @@ public class DeadlineAnalyserpage extends Basepage
 		sleep();
 		click(cancelationbuttton);
 		sleep();
-		getText(gettingnewtxid);
 		select(selectdropdownforcancelation, " Link no longer needed ");
 		sleep();
 		explicitWaitClickable(clickyesbutton);
+		explicitWaitClickable(okbutton);
+		return txidtext;
 		
 		
 		

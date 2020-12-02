@@ -49,6 +49,20 @@ public class RPMUser extends Basepage
 			cancel.rejectcancelationwithRPMuser();
 		}
 	}
+	public void CancelationrequestwithRPMuserfordeadlinealayser(String statusoftheapplication, String txid)
+	{
+		refreshthepage();
+		sleep();
+		homepage.cancelationbutton();
+		view.requestviewforlegalfordeadlineanalsyer(txid);
+		if (statusoftheapplication.equals("Approved"))
+		{
+			cancel.approvecancelationwithRPMuser();
+		}
+		else {
+			cancel.rejectcancelationwithRPMuser();
+		}
+	}
 	
 	public void fullcancelationwithRPMuser(int i)
 	{

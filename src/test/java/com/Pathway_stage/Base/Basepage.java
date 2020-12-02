@@ -151,8 +151,8 @@ public class Basepage {
 			Robot r = new Robot();
 			sleep();
 			r.keyPress(KeyEvent.VK_ENTER);
-			/*sleep();
-			r.keyRelease(KeyEvent.VK_ENTER);*/
+			sleep();
+			r.keyRelease(KeyEvent.VK_ENTER);
 			
 		} catch (Exception e) {
 			// TODO: handle exception

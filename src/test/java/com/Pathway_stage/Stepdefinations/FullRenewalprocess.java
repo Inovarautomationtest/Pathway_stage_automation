@@ -55,13 +55,13 @@ public void first_RPM_User_login_with_valid_creditinals_for_Renewal_process(Stri
 @Then("^Rise a Renewal Request with  first RPM User (\\d+)$")
 public void rise_a_Renewal_Request_with_first_RPM_User(int i) 
 {
-	//rpm.renewalrequestwithRPMuser(i);
+	rpm.renewalrequestwithRPMuser(i);
 	extentpassreport("Renewal request rise succesfully with rpm user1");
 	System.out.println("Renewal request rise succesfully with rpm user1");
    
 }
 
-@Then("^logout  fifth RPM User after rise a Renewal process$")
+@Then("^logout  first RPM User after rise a Renewal process$")
 public void logout_fifth_RPM_User_after_rise_a_Renewal_process() 
 {
    closebrowser();
@@ -83,7 +83,7 @@ public void first_NOC_User_login_with_valid_creditinals_for_renewal_process()
 @Then("^check the \"([^\"]*)\" status a Renewal Request with  first NOC User (\\d+)$")
 public void check_the_status_a_Renewal_Request_with_first_NOC_User(String statusoftheapplication, int i) 
 {
-	//noc.renewalrequestwithNOCuser(statusoftheapplication, i);
+	noc.renewalrequestwithNOCuser(statusoftheapplication, i);
 	System.out.println(">>>Check the status of the renewal request with First NOC user");
 	extentpassreport("Fisrt NOC user check the " + statusoftheapplication + "of the application");
    
@@ -110,10 +110,21 @@ public void first_Legal_User_login_with_valid_creditinals_for_Renewal_process()
 @Then("^Request send to FCC of Renewal Request with  first Legal User (\\d+)$")
 public void request_send_to_FCC_of_Renewal_Request_with_first_Legal_User(int i) 
 {
-	//legal.renewalrequestsendtoFCCwithLegalsuer(i);
-	extentpassreport("first legal user  renewal application send to fcc");
-	System.out.println("first legal user  renewal cancelation application send to fcc");
+	legal.renewalrequestsendtoFCCwithLegalsuer(i);
+	extentpassreport("first legal user  renewal application send to underreview");
+	System.out.println("first legal user  renewal cancelation application send to underreview");
    
+}
+@Then("^reewalapplication sendtoFCC from underreviewpage with First legal user (\\d+)$")
+public void reewalapplication_sendtoFCC_from_underreviewpage_with_First_legal_user(int i) 
+{
+    try {
+		legal.sendtoFCCfromundereviewpage(i);
+		extentpassreport("first legal user  renewal application send to fcc");
+		System.out.println("first legal user  renewal application send to fcc");
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
 }
 
 @Then("^logout first Legal User after rise a Renewal process$")
@@ -139,7 +150,7 @@ public void second_RPM_User_login_with_valid_creditinals_for_Renewal_process()
 public void rise_a_Renewal_Request_with_second_RPM_User(int i) 
 {
 	
-	//rpm.renewalrequestwithRPMuser(i);
+	rpm.renewalrequestwithRPMuser(i);
 	extentpassreport("Renewal request rise succesfully with rpm user2");
 	System.out.println("Renewal request rise succesfully with rpm user2");
 }
@@ -170,7 +181,7 @@ public void check_the_status_a_Renewal_Request_with_second_NOC_User(String statu
 {
 	refreshthepage();
 	sleep();
-	//noc.renewalrequestwithNOCuser(statusoftheapplication, i);
+	noc.renewalrequestwithNOCuser(statusoftheapplication, i);
 	System.out.println(">>>Check the status of the renewal request with second NOC user");
 	extentpassreport("second NOC user check the " + statusoftheapplication + "of the application");
   
@@ -198,7 +209,7 @@ public void third_RPM_User_login_with_valid_creditinals_for_Renewal_process()
 
 @Then("^Rise a Renewal Request with  third RPM User (\\d+)$")
 public void rise_a_Renewal_Request_with_third_RPM_User(int i) throws Throwable {
-	//rpm.renewalrequestwithRPMuser(i);
+	rpm.renewalrequestwithRPMuser(i);
 	extentpassreport("Renewal request rise succesfully with rpm user3");
 	System.out.println("Renewal request rise succesfully with rpm user3");
 }
@@ -229,7 +240,7 @@ public void check_the_status_a_Renewal_Request_with_third_NOC_User(String status
 {
 	refreshthepage();
 	sleep();
-	//noc.renewalrequestwithNOCuser(statusoftheapplication, i);
+	noc.renewalrequestwithNOCuser(statusoftheapplication, i);
 	System.out.println(">>>Check the status of the renewal request with third NOC user");
 	extentpassreport("third NOC user check the " + statusoftheapplication + "of the application");
   
@@ -279,4 +290,93 @@ public void logout_third_Legal_User_after_rise_a_Full_Renewal_process() throws T
 	extentreportssave();
   
 }
+@When("^fourth RPM User login with valid creditinals for Renewal process$")
+public void fourth_RPM_User_login_with_valid_creditinals_for_Renewal_process() 
+{
+	login.InitApplication();
+	 rpm.loginwithRPMUser();
+	 rpm.Rpmuserloginwithpopup();
+	    extentpassreport("RPM user4 login with succesfully valid credtinals");
+	    System.out.println("RPM user4 login with succesfully valid credtinals");
+}
+
+@Then("^Rise a Renewal Request with  fourth RPM User (\\d+)$")
+public void rise_a_Renewal_Request_with_fourth_RPM_User(int i) 
+{
+	rpm.renewalrequestwithRPMuser(i);
+	extentpassreport("Renewal request rise succesfully with rpm user4");
+	System.out.println("Renewal request rise succesfully with rpm user4");
+}
+
+@Then("^logout  fourth RPM User after rise a Renewal process$")
+public void logout_fourth_RPM_User_after_rise_a_Renewal_process() 
+{
+	closebrowser();
+	   extentpassreport("logout RPM user 4  after rise a renewal request");
+	   System.out.println("logout RPM user 4  after rise a renewal request");
+}
+@When("^fourth NOC User login with valid creditinals for renewal process$")
+public void fourth_NOC_User_login_with_valid_creditinals_for_renewal_process() 
+{
+	login.InitApplication();
+	   noc.loginwithNOCUser();
+	   noc.nocuserpopuplogin();
+		extentpassreport("NOC user4 login with succesfully valid credtinals");
+	   System.out.println("NOC user4 login with succesfully valid credtinals");
+}
+
+@Then("^check the \"([^\"]*)\" status a Renewal Request with  fourth NOC User (\\d+)$")
+public void check_the_status_a_Renewal_Request_with_fourth_NOC_User(String statusoftheapplication, int i) 
+{
+	refreshthepage();
+	sleep();
+	noc.renewalrequestwithNOCuser(statusoftheapplication, i);
+	System.out.println(">>>Check the status of the renewal request with second NOC user");
+	extentpassreport("second NOC user check the " + statusoftheapplication + "of the application");
+}
+
+@Then("^logout  fourth NOC User after rise a Renewal process$")
+public void logout_fourth_NOC_User_after_rise_a_Renewal_process() throws Throwable {
+	closebrowser();
+    extentpassreport("logout NOC user 4  after check a renewal request");
+    System.out.println("logout NOC user 4  after check a renewal request");
+}
+
+@When("^fourth Legal User login with valid creditinals for Renewal process$")
+public void fourth_Legal_User_login_with_valid_creditinals_for_Renewal_process() 
+{
+	login.InitApplication();
+	  legal.loginwithLeaglUser();
+	  legal.legaluserloginwithpopup();
+	  extentpassreport("Legal user4 login with succesfully valid credtinals");
+	  System.out.println("Legal user4 login with succesfully valid credtinals");
+}
+
+@Then("^Request send to FCC of Renewal Request with  fourth Legal User (\\d+)$")
+public void request_send_to_FCC_of_Renewal_Request_with_fourth_Legal_User(int i) 
+{
+	legal.renewalrequestsendtoFCCwithLegalsuer(i);
+	extentpassreport("fourth legal user  renewal application send to underreview");
+	System.out.println("fourth legal user  renewal cancelation application send to underreview");
+}
+
+@Then("^reewalapplication reject from underreviewpage with fourth legal user (\\d+)$")
+public void reewalapplication_reject_from_underreviewpage_with_fourth_legal_user(int i) 
+{
+	legal.renewalrejectfromunderviewpage(i);
+	extentpassreport("fourth legal user renewal application send to FCC from underreview page");
+	System.out.println("fourth legal user renewal application send to FCC from underreview page");
+    
+}
+
+@Then("^logout fourth Legal User after rise a Renewal process$")
+public void logout_fourth_Legal_User_after_rise_a_Renewal_process() 
+{
+	closebrowser();
+    extentpassreport("logout legal user 4  after check a renewal request");
+    System.out.println("logout legal user 4  after check a renewal request");
+    extentreportssave();
+}
+
+
 }
