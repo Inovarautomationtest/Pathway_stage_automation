@@ -194,7 +194,7 @@ public class FullBuildoutflow extends Basepage
 	@Then("^Rise a BuildOutflow Request with secondMarket User (\\d+) with \"([^\"]*)\"$")
 	public void rise_a_BuildOutflow_Request_with_secondMarket_User(int i, String date) throws Throwable {
 
-		market.buildoutrequest(i, date);
+		//market.buildoutrequest(i, date);
 		extentpassreport("Rise a build out request with Market user2");
 		System.out.println("Rise a build out request with Market user2");
 	}
@@ -228,7 +228,7 @@ public class FullBuildoutflow extends Basepage
 		refreshthepage();
 		sleep();
 
-		rpm.buildoutrequestwithRPMuser(statusoftheapplication, i);
+		//rpm.buildoutrequestwithRPMuser(statusoftheapplication, i);
 		extentpassreport("Check the" + statusoftheapplication + "of the BUildout request with RPM USER2");
 		System.out.println("Check the" + statusoftheapplication + "of the BUildout request with RPM USER2");
 
@@ -258,7 +258,7 @@ public class FullBuildoutflow extends Basepage
 	{
 		refreshthepage();
 		sleep();
-		market.buildoutrequest(i, date);
+		//market.buildoutrequest(i, date);
 		extentpassreport("Rise a build out request with Market user3");
 		System.out.println("Rise a build out request with Market user3");
 	}

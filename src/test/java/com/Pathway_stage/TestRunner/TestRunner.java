@@ -13,25 +13,26 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features={"D:\\Pathway_stage\\src\\test\\java\\com\\Pathway_stage\\Base\\Featurefiles\\FullRenewalflow.feature"},
+features={"D:\\Pathway_stage\\src\\test\\java\\com\\Pathway_stage\\Base\\Featurefiles\\DeadlineAnalayserRenewalflow.feature"},
 glue= "com.Pathway_stage.Stepdefinations", 
-monochrome = true,dryRun = false, strict = true, tags="@RPMUSER4",
+monochrome = true,dryRun = true, strict = true, 
 format = {
         "pretty",
         "html:test-output",
-       "json:target/Pathwayreports/Cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/FullBuildOutflowreport.html",
+       "json:target/Pathwayreports/Cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/Deadlineanalsyser.html",
          "junit:junit_xml/cucumber.xml"})
-public class TestRunner  extends AbstractTestNGCucumberTests{
+public class TestRunner  extends AbstractTestNGCucumberTests{  
 	@AfterClass
     public static void writeExtentReport() {
         Reporter.loadXMLConfig("D:\\Pathway_stage\\extentreport.xml");
-        
+        	
         
     } 
   
      
 	
-	
+	      
 }
 
 
+	

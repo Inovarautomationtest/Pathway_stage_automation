@@ -57,7 +57,7 @@ public class PartialCancelationsflow extends Basepage {
 
 	@Then("^Rise a Partial Cancelation Request with first Market User (\\d+)$")
 	public void rise_a_Partial_Cancelation_Request_with_first_Market_User(int i) {
-		market.partialcancelation(i);
+		//market.partialcancelation(i);
 		System.out.println(">>>Market user rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request");
@@ -90,7 +90,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		//rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with First RPM user");
 		extentpassreport("Fisrt RPM user check the " + statusoftheapplication + "of the application");
 
@@ -121,7 +121,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the cancelation request with First NOC user");
 		extentpassreport("Fisrt NOC user check the " + statusoftheapplication + "of the application");
 
@@ -150,7 +150,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-	legal.CancelationrequestwithLeaglusertosendtounderreview(i);
+	//legal.CancelationrequestwithLeaglusertosendtounderreview(i);
 		extentpassreport("partial cancelation request send to underreview with Legal user1 ");
 		System.out.println("partial cancelation  request send to underreview with Leagal user1");
 
@@ -159,7 +159,7 @@ public class PartialCancelationsflow extends Basepage {
 	public void partial_Cancelation_application_send_to_FCC_from_the_under_review_page_with_First_Legal_user(int i) 
 	{
 		try {
-			legal.sendfcccancelationapplication(i);
+			//legal.sendfcccancelationapplication(i);
 			extentpassreport("send to fcc partial cancelation application from under review page with first legal user");
 			System.out.println("send to fcc partial cancelation application from under review page with first legal user");
 		} catch (Exception e) {
@@ -189,7 +189,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		market.partialcancelation(i);
+		//market.partialcancelation(i);
 		System.out.println(">>>Market user2 rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user2");
@@ -221,7 +221,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+		//rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with second RPM user");
 		extentpassreport("second RPM user check the " + statusoftheapplication + "of the application");
 
@@ -250,7 +250,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		market.partialcancelation(i);
+	//	market.partialcancelation(i);
 		System.out.println(">>>Market user3 rise a request succesfully");
 		// view.cancelationchecking(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user3");
@@ -279,7 +279,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+	//	rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with third RPM user");
 		extentpassreport("third RPM user check the " + statusoftheapplication + "of the application");
 
@@ -308,7 +308,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the cancelation request with third NOC user");
 		extentpassreport("third NOC user check the " + statusoftheapplication + "of the application");
 
@@ -338,7 +338,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		market.partialcancelation(i);
+	//	market.partialcancelation(i);
 		System.out.println(">>> check the status of the partial cancelation request with market user4");
 		extentpassreport("Market user4 rise a partial cancelation request succesfully");
 	}
@@ -367,7 +367,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-	rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
+	//rpm.CancelationrequestwithRPMuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with fourth RPM user");
 		extentpassreport("fourth RPM user check the " + statusoftheapplication + "of the application");
 
@@ -394,7 +394,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
+		//noc.CancelationrequestwithNOCuser(statusoftheapplication, i);
 		System.out.println(">>>Check the status of the partial cancelation request with fourth NOC user");
 		extentpassreport("fourth NOC user check the " + statusoftheapplication + "of the application");
 
@@ -424,7 +424,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		legal.rejectrenewalapplicationwithLegalsuer(i);
+		legal.rejectacancelationpplicationwithLegalsuer(i);
 		extentpassreport("reject partial cancelation application with Legal user");
 		System.out.println("reject partial cancelation application with Legal user");
 	   
@@ -676,7 +676,7 @@ public class PartialCancelationsflow extends Basepage {
 	{
 		refreshthepage();
 		sleep();
-		legal.rejectrenewalapplicationwithLegalsuer(i);
+		legal.rejectacancelationpplicationwithLegalsuer(i);
 		extentpassreport("reject partial cancelation application with seventh Legal user");
 		System.out.println("reject partial cancelation application with seventh Legal user");
 	}

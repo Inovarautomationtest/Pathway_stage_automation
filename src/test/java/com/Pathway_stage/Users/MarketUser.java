@@ -70,6 +70,8 @@ public class MarketUser extends Basepage
 		
 		refreshthepage();
 		sleep();
+		refreshthepage();
+		sleep();
 		homepage.Buildoutbutton();
 		buildout.createnewbuildoutrequestwithMarketuser(exceldata.getColumn_1(i), exceldata.getColumn_2(i), date);
 	}

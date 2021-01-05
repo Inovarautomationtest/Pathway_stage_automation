@@ -259,7 +259,7 @@ public class Basepage {
 	}
 	public void sleep() {
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			logger.error(e.getMessage());
 		}

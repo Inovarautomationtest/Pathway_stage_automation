@@ -150,17 +150,13 @@ public class FullCancelationflow extends Basepage {
 		System.out.println("full cancelation  request send to underreview with Leagal user1");
 
 	}
-	@Then("^Application Send to FCC from the Under review page with first legal user (\\d+)$")
-	public void application_Send_to_FCC_from_the_Under_review_page_with_first_legal_user(int i) 
-	{
-	    try {
-			legal.sendfcccancelationapplication(i);
-			extentpassreport("send to fcc cancelation application from under review page with first legal user");
-			System.out.println("send to fcc cancelation application from under review page with first legal user");
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+	@Then("^Full cancelation Application Send to FCC from the Under review page with first legal user (\\d+)$")
+	public void full_cancelation_Application_Send_to_FCC_from_the_Under_review_page_with_first_legal_user(int i) {
+		legal.sendfcccancelationapplication(i);
+		extentpassreport("send to fcc cancelation application from under review page with first legal user");
+		System.out.println("send to fcc cancelation application from under review page with first legal user"); 
 	}
+	
 
 	@Then("^logout First Legal User after rise a full cancelation process$")
 	public void logout_First_Legal_User_after_rise_a_full_cancelation_process() {
@@ -512,7 +508,7 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 		System.out.println("fifth legal user  full cancelation application send to undereviewpage");
 
 	}
-	@Then("^request send to FCC from the underreview page with fifth legal user (\\d+)$")
+	@Then("^full cancelation request send to FCC from the underreview page with fifth legal user (\\d+)$")
 	public void request_send_to_FCC_from_the_underreview_page_with_fifth_legal_user(int i) 
 	{
 	    try {
@@ -778,7 +774,7 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 		System.out.println("full cancelation  request send to undereview with eighth Leagal user");
 	}
 
-	@Then("^Reject cancelation request in from under review tab with eighth Legal user (\\d+)$")
+	@Then("^Reject full cancelation request in from under review tab with eighth Legal user (\\d+)$")
 	public void reject_cancelation_request_in_from_under_review_tab_with_eighth_Legal_user(int i)
 	{
 	    try {
@@ -876,7 +872,7 @@ public void logout_fourth_Legal_User_after_rise_a_Full_cancelation_process()
 		System.out.println("ninth legal user  full cancelation application send to fcc");
 	}
 
-	@Then("^request reject from the underreview page with ninth legal user (\\d+)$")
+	@Then("^full cancelation request reject from the underreview page with ninth legal user (\\d+)$")
 	public void request_reject_from_the_underreview_page_with_ninth_legal_user(int i) 
 	{
 		try {

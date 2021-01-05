@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="0">
-<testcase classname="check the functionality of Renewel request for all scenarios" name="Rise a Renewal apllication Request with fourth RPM User" time="0">
-<failure message="The scenario has pending or undefined step(s)"><![CDATA[When fourth RPM User login with valid creditinals for Renewal process.......undefined
-Then Rise a Renewal Request with  fourth RPM User 1681......................undefined
-Then logout  fourth RPM User after rise a Renewal process...................undefined
+<testsuite failures="9" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="11" time="0">
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Rise a Renewal request with RPMUSER1 for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with first RPMUSER for Renewal process.skipped
+When first RPMUSER login with valid credtinlas for Deadline analyser Renewal process.skipped
+Then rise a Renewal request with  first RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023".skipped
+Then close browser after  Renewal Request rise a request with RPMUSER1......undefined
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the renwal application with first NOCuser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When first NOC user login with valid credtinals  for renewal process for Deadline analyser moduel.undefined
+Then Check the "approved" status of the Renewal application for deadLine analyser moduel with  first NOC user.skipped
+Then close browser after check the status of the renewal application with  first NOC user for deadLine analyser moduel.skipped
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the cancelation application with first Legaluser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When first legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel.skipped
+Then renewal application send to under review with First legal user.........undefined
+Then renewal application send to FCC  from under review page with first legal user.undefined
+Then close browser after check the status of the renewal application with  first legal user for deadLine analyser moduel.skipped
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Rise a Renewal request with  second RPMUSER for deadline analyser moduel" time="0">
+<system-out><![CDATA[Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with  second RPMUSER  for renewal process.skipped
+When second RPMUSER login with valid credtinlas for Deadline analyser  Renewal process.skipped
+Then rise a renewal request with  second RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023".skipped
+Then close browser after rise a renewal request with  second RPMUSER........skipped
+]]></system-out>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the renewal application with second NOCuser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When second NOC user login with valid credtinals  for renewal process for Deadline analyser moduel.undefined
+Then Check the "Rejected" status of the renewal application for deadLine analyser moduel with second NOC user.skipped
+Then close browser after check the status of the renewal application with second NOC user for deadLine analyser moduel.skipped
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Rise a renewal request with  Third RPMUSER for deadline analyser moduel" time="0">
+<system-out><![CDATA[Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with  Third RPMUSER for renewal process.skipped
+When Third RPMUSER login with valid credtinlas for Deadline analyser renewal process.skipped
+Then rise a renewal request with Third RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023".skipped
+Then close browser after rise a renewal request with Third RPMUSER..........skipped
+]]></system-out>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the renewal application with Third NOCuser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When third NOC user login with valid credtinals  for Cancelation process for Deadline analyser moduel.undefined
+Then Check the "approved" status of the renewal application for deadLine analyser moduel with Third NOCuser.skipped
+Then close browser after check the status of the renewal application with Third NOCuser for deadLine analyser moduel.skipped
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the renewal application with Third Legaluser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When third legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel.undefined
+Then Check the "Rejected" status of the renewal application for deadLine analyser moduel with Third Legalsuer.skipped
+Then close browser after check the status of the renewal application with Third legal user  for deadLine analyser moduel.skipped
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Rise a Renewal request with fourth RPMUSER for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with fourth RPMUSER for Renewal process.undefined
+When fourth RPMUSER login with valid credtinlas for Deadline analyser Renewal process.undefined
+Then rise a Renewal request with  fourth RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023".undefined
+Then close browser after  Renewal Request rise a request with  fourth RPMUSER.undefined
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the renwal application with fourth NOCuser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When fourth NOC user login with valid credtinals  for renewal process for Deadline analyser moduel.undefined
+Then Check the "approved" status of the Renewal application for deadLine analyser moduel with  fourth NOC user.undefined
+Then close browser after check the status of the renewal application with  fourth NOC user for deadLine analyser moduel.undefined
+]]></failure>
+</testcase>
+<testcase classname="check the Renewal functionlaity of Deadanalyser for Pathway" name="Check the status of the cancelation application with fourth Legaluser for deadline analyser moduel" time="0">
+<failure message="The scenario has pending or undefined step(s)"><![CDATA[When fourth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel.skipped
+Then renewal application send to under review with fourth legal user........undefined
+Then renewal application reject from under review page with fourth legal user.undefined
+Then close browser after check the status of the renewal application with  fourth legal user for deadLine analyser moduel.undefined
 ]]></failure>
 </testcase>
 </testsuite>

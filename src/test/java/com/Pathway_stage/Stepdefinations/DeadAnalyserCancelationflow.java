@@ -76,7 +76,7 @@ public class DeadAnalyserCancelationflow  extends Basepage
 		
 		refreshthepage();
 		sleep();
-		home.clickDeadlineanalyserbutton();
+		//home.clickDeadlineanalyserbutton();
 		System.out.println(txid);
 		rpm.CancelationrequestwithRPMuserfordeadlinealayser(statusoftheapplication, txid);
 	    
@@ -125,13 +125,20 @@ public class DeadAnalyserCancelationflow  extends Basepage
 	    
 	}
 
-	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with first Legalsuer$")
-	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_first_Legalsuer() throws Throwable 
+	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with first Legalsuer send to underreview$")
+	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_first_Legalsuer() 
 	{
 		refreshthepage();
 		sleep();
 		System.out.println(txid);
 		legal.CancelationrequestwithLeagluserdeadlineanalsyer(txid);
+	}
+	@Then("^send to FCC to a cancelation application with first legal user from undereview page$")
+	public void send_to_FCC_to_a_cancelation_application_with_first_legal_user_from_undereview_page() 
+	{
+	   sleep();
+	   legal.sendtofcccancelationwithlegaluserfordeadlineanlayser(txid);
+	   
 	}
 
 	@Then("^close browser after check the status of the cancelation application with first legal user for deadLine analyser moduel$")
@@ -457,12 +464,19 @@ public class DeadAnalyserCancelationflow  extends Basepage
 	   
 	}
 
-	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with fifth Legalsuer$")
-	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_fifth_Legalsuer(String txid){
+	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with fifth Legalsuer from underreview tab$")
+	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_fifth_Legalsuer(){
 		refreshthepage();
 		sleep();
 		System.out.println(txid);
 		legal.CancelationrequestwithLeagluserdeadlineanalsyer(txid);
+	}
+	
+	@Then("^send to FCC cancelation application from under review tab with Fifth Legal user$")
+	public void send_to_FCC_cancelation_application_from_under_review_tab_with_Fifth_Legal_user()
+	{
+	    sleep();
+	    legal.sendtofcccancelationwithlegaluserfordeadlineanlayser(txid);
 	}
 
 	@Then("^close browser after check the status of the cancelation application with fifth legaluser for deadLine analyser moduel$")
@@ -593,5 +607,206 @@ public class DeadAnalyserCancelationflow  extends Basepage
 	{
 	   closebrowser();
 	}
+	
+	
+
+	@Given("^enter url application into \"([^\"]*)\" for Deadlineanlayser in the \"([^\"]*)\" environment with  eighth Market user$")
+	public void enter_url_application_into_for_Deadlineanlayser_in_the_environment_with_eighth_Market_user(String browsername, String environment) 
+	{
+		init(browsername);
+		if (environment.equals("local")) {
+			geturl(Pathwayconstants.URL_OF_THE_APPLICATION);
+		}
+		else {
+			geturl(Pathwayconstants.STAGE_URL_OF_THE_APPLICATION);
+		}
+	}
+
+	@When("^eighth Market user login with valid credtinlas for Deadline analyser$")
+	public void eighth_Market_user_login_with_valid_credtinlas_for_Deadline_analyser() 
+	{
+		market.loginwithMarketUser();
+		market.marketuserpopuplogin();
+	}
+
+	@Then("^rise a canceanlation request with  eighth marketuser in the deadline analyser section with \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void rise_a_canceanlation_request_with_eighth_marketuser_in_the_deadline_analyser_section_with_to(String fromdate, String todate) 
+	{
+		home.clickDeadlineanalyserbutton();
+		  txid = deadline.RisecancelationRequestwithMarketuser(fromdate, todate);
+		  System.out.println(txid);
+	}
+
+	@Then("^close browser after rise a request with  eighth market user$")
+	public void close_browser_after_rise_a_request_with_eighth_market_user() 
+	{
+	    closebrowser();
+	}
+
+	@When("^eighth Rpm user login with valid credtinals  for Cancelation process for Deadline analyser moduel$")
+	public void eighth_Rpm_user_login_with_valid_credtinals_for_Cancelation_process_for_Deadline_analyser_moduel() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		sleep();
+		System.out.println("Login with RPM USER1 for build out process");
+	}
+
+	@Then("^Check the \"([^\"]*)\" status of the Cancelation application for deadLine analyser moduel with eighth RPM USER$")
+	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_eighth_RPM_USER(String statusoftheapplication) 
+	{
+		refreshthepage();
+		sleep();
+		System.out.println(txid);
+		rpm.CancelationrequestwithRPMuserfordeadlinealayser(statusoftheapplication, txid);
+	}
+
+	@Then("^close browser after check the status of the cancelation application with  eighth RPMuser for deadLine analyser moduel$")
+	public void close_browser_after_check_the_status_of_the_cancelation_application_with_eighth_RPMuser_for_deadLine_analyser_moduel() 
+	{
+		closebrowser();
+	    
+	}
+
+	@When("^eighth NOC user login with valid credtinals  for Cancelation process for Deadline analyser moduel$")
+	public void eighth_NOC_user_login_with_valid_credtinals_for_Cancelation_process_for_Deadline_analyser_moduel()
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println("Login with NOC USER1 for build out process succesfully");
+	}
+
+	@Then("^Check the \"([^\"]*)\" status of the Cancelation application for deadLine analyser moduel with eighth NOC user$")
+	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_eighth_NOC_user(String statusoftheapplication)
+	{
+		refreshthepage();
+		sleep();
+		home.clickDeadlineanalyserbutton();
+		System.out.println(txid);
+		noc.CancelationrequestwithNOCuserfordeadlineanlayser(statusoftheapplication, txid);
+	}
+
+	@Then("^close browser after check the status of the cancelation application with eighth NOCuser for deadLine analyser moduel$")
+	public void close_browser_after_check_the_status_of_the_cancelation_application_with_eighth_NOCuser_for_deadLine_analyser_moduel()
+	{
+	   closebrowser();
+	}
+
+	@When("^eighth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel$")
+	public void eighth_legal_user_login_with_valid_credtinals_for_Cancelation_process_for_Deadline_analyser_moduel() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println(">>>eighth Legal user login with valid credtinals");
+	}
+
+	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with eighth Legalsuer send to underreview$")
+	public void check_the_approved_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_eighth_Legalsuer_send_to_underreview()
+	{
+		refreshthepage();
+		sleep();
+		System.out.println(txid);
+		legal.CancelationrequestwithLeagluserdeadlineanalsyer(txid);
+	}
+
+	@Then("^reject cancelation application with eighth legal user from undereview page$")
+	public void reject_cancelation_application_with_eighth_legal_user_from_undereview_page() 
+	{
+	    sleep();
+	    legal.rejectacancelationpplicationwithLegalsuerfordeadlineanalyser(txid);
+	}
+
+	@Then("^close browser after check the status of the cancelation application with eighth legal user for deadLine analyser moduel$")
+	public void close_browser_after_check_the_status_of_the_cancelation_application_with_eighth_legal_user_for_deadLine_analyser_moduel()
+	{
+	  closebrowser();
+	}
+
+	@When("^ninth RPMUSER login with valid credtinlas for Deadline analyser$")
+	public void ninth_RPMUSER_login_with_valid_credtinlas_for_Deadline_analyser() 
+	{
+		login.InitApplication();
+		rpm.loginwithRPMUser();
+		rpm.Rpmuserloginwithpopup();
+		System.out.println(">>>ninth RPM user login with valid credtinals");
+	}
+
+	@Then("^rise a canceanlation request with ninth RPMUSER in the deadline analyser section with \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void rise_a_canceanlation_request_with_ninth_RPMUSER_in_the_deadline_analyser_section_with_to(String fromdate, String todate)
+	{
+		refreshthepage();
+		sleep();
+		home.clickDeadlineanalyserbutton();
+		  txid = deadline.RisecancelationRequestwithMarketuser(fromdate, todate);
+		  System.out.println(txid);
+	}
+
+	@Then("^close browser after rise a request with ninth RPMUSER$")
+	public void close_browser_after_rise_a_request_with_ninth_RPMUSER() 
+	{
+	    closebrowser();
+	}
+
+	@When("^ninth NOC user login with valid credtinals  for Cancelation process for Deadline analyser moduel$")
+	public void ninth_NOC_user_login_with_valid_credtinals_for_Cancelation_process_for_Deadline_analyser_moduel() 
+	{
+		login.InitApplication();
+		noc.loginwithNOCUser();
+		noc.nocuserpopuplogin();
+		System.out.println(">>>ninth NOC user login with valid credtinals");
+	}
+
+	@Then("^Check the \"([^\"]*)\" status of the Cancelation application for deadLine analyser moduel with ninth NOCuser$")
+	public void check_the_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_ninth_NOCuser(String statusoftheapplication) 
+	{
+		refreshthepage();
+		sleep();
+		home.clickDeadlineanalyserbutton();
+		System.out.println(txid);
+		noc.CancelationrequestwithNOCuserfordeadlineanlayser(statusoftheapplication, txid);
+	}
+
+	@Then("^close browser after check the status of the cancelation application with  ninth NOCuser for deadLine analyser moduel$")
+	public void close_browser_after_check_the_status_of_the_cancelation_application_with_ninth_NOCuser_for_deadLine_analyser_moduel() 
+	{
+	    closebrowser();
+	}
+
+	@When("^ninth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel$")
+	public void ninth_legal_user_login_with_valid_credtinals_for_Cancelation_process_for_Deadline_analyser_moduel() 
+	{
+		login.InitApplication();
+		legal.loginwithLeaglUser();
+		legal.legaluserloginwithpopup();
+		System.out.println("Login with Fifth Legal user");
+	}
+
+	@Then("^Check the approved status of the Cancelation application for deadLine analyser moduel with ninth Legalsuer from underreview tab$")
+	public void check_the_approved_status_of_the_Cancelation_application_for_deadLine_analyser_moduel_with_ninth_Legalsuer_from_underreview_tab()
+	{
+		refreshthepage();
+		sleep();
+		System.out.println(txid);
+		legal.CancelationrequestwithLeagluserdeadlineanalsyer(txid);
+	}
+
+	@Then("^reject cancelation application from under review tab with ninth Legal user$")
+	public void reject_cancelation_application_from_under_review_tab_with_ninth_Legal_user() 
+	{
+		sleep();
+		legal.rejectacancelationpplicationwithLegalsuerfordeadlineanalyser(txid);
+	    
+	}
+
+	@Then("^close browser after check the status of the cancelation application with ninth legaluser for deadLine analyser moduel$")
+	public void close_browser_after_check_the_status_of_the_cancelation_application_with_ninth_legaluser_for_deadLine_analyser_moduel() 
+	{
+	    closebrowser();
+	}
+
+
 
 }

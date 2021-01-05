@@ -115,6 +115,25 @@ public class RequestViewPage extends Basepage
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+		public void requestforunderview(int i)
+		{
+			try {
+				WebElement txbtn =  driver.findElement(By.xpath("//span[contains(text(),'TX Site ID')]" ));
+			    
+		        JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+		        executor1.executeScript("arguments[0].click();", txbtn);
+		        sleep();
+		       
+		       
+		        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[5]"));
+		        WebDriverWait wait = new WebDriverWait(driver, 15);
+		        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[5]")));
+		        element.sendKeys(data.getColumn_1(i));
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		
 	}
 	public void requestforcancelationviewdeadlineanalsyer(String txiddata)
@@ -130,6 +149,26 @@ public class RequestViewPage extends Basepage
 	        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[4]"));
 	        WebDriverWait wait = new WebDriverWait(driver, 15);
 	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[4]")));
+	        element.sendKeys(txiddata);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	public void fccrequestforcancelationviewdeadlineanalsyer(String txiddata)
+	{
+		try {
+			WebElement txbtn =  driver.findElement(By.xpath("//span[contains(text(),'TX Site ID')]" ));
+		    
+	        JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+	        executor1.executeScript("arguments[0].click();", txbtn);
+	        sleep();
+	       
+	       
+	        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[5]"));
+	        WebDriverWait wait = new WebDriverWait(driver, 15);
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[5]")));
 	        element.sendKeys(txiddata);
 			
 		} catch (Exception e) {
@@ -178,6 +217,19 @@ public class RequestViewPage extends Basepage
         WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[4]"));
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[4]")));
+        element.sendKeys(data.getColumn_1(i));
+	}
+	public void txidthirdfield(int i)
+	{
+WebElement txbtn =  driver.findElement(By.xpath("(.//*[@class='slick-column-name'])[4]" ));
+	    
+        JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+        executor1.executeScript("arguments[0].click();", txbtn);
+        sleep();
+       
+        WebElement element = driver.findElement(By.xpath("(.//*[@placeholder='🔍'])[3]"));
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[@placeholder='🔍'])[3]")));
         element.sendKeys(data.getColumn_1(i));
 	}
 	public void requestviewforlegalfordeadlineanalsyer(String txiddata)

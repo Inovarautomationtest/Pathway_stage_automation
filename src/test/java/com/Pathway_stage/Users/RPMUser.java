@@ -55,7 +55,7 @@ public class RPMUser extends Basepage
 		sleep();
 		homepage.cancelationbutton();
 		view.requestviewforlegalfordeadlineanalsyer(txid);
-		if (statusoftheapplication.equals("Approved"))
+		if (statusoftheapplication.equals("approved"))
 		{
 			cancel.approvecancelationwithRPMuser();
 		}

@@ -47,19 +47,17 @@ public class LegalUser extends Basepage
 	}
 	public void sendfcccancelationapplication(int i)
 	{
-		refreshthepage();
-		sleep();
+		
 		cancel.clickUnderreviewtab();
-		view.requestforcancelationview(i);
+		view.requestforunderview(i);
 		cancel.sendtofccfromundereview();
 		
 	}
 	public void cancelationrejectfromunderreviewpage(int i)
 	{
-		refreshthepage();
-		sleep();
+		
 		cancel.clickUnderreviewtab();
-		view.requestforcancelationview(i);
+		view.requestforunderview(i);
 		cancel.Sendtounderreviewforrejection();
 		
 	}
@@ -70,9 +68,24 @@ public class LegalUser extends Basepage
 		
 		homepage.cancelationbutton();
 		view.requestforcancelationviewdeadlineanalsyer(txiddata);
-		cancel.sendtounderreviewwithLegaluser();
-		view.requestforcancelationviewdeadlineanalsyer(txiddata);
-		cancel.Underreviewapplicationsendtofcc();
+		cancel.sendtounderreviewwithLegaluser();	
+	}
+	public void sendtofcccancelationwithlegaluserfordeadlineanlayser(String txiddata)
+	{
+		cancel.clickUnderreviewtab();
+		view.fccrequestforcancelationviewdeadlineanalsyer(txiddata);
+		cancel.sendtofccfromundereview();
+	}
+	public void rejectcancelapplwithlegaluserfordeadlineanlyser(String txiddata)
+	{
+		try {
+			cancel.clickUnderreviewtab();
+			view.fccrequestforcancelationviewdeadlineanalsyer(txiddata);
+			cancel.Sendtounderreviewforrejection();	
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 	public void renewalrequestsendtoFCCwithLegalsuer(int i)
 	{
@@ -82,7 +95,7 @@ public class LegalUser extends Basepage
 			homepage.renewalbutton();
 			view.renwealrequestview(i);
 			renewalpage.sendtounderrenewalforrenewalconnection();
-		} catch (StaleElementReferenceException e) {
+		} catch (Exception e) {
 			
 		}
 		
@@ -90,14 +103,16 @@ public class LegalUser extends Basepage
 	}
 	public void renewalsendtofcc(int i)
 	{
+		sleep();
 		renewalpage.Clickunderreviewtab();
-		view.renwealrequestview(i);
+		view.requestforunderview(i);
 		renewalpage.sendtofccfromundereviewpage();
 	}
 	public void renewalrejectfromunderviewpage(int i)
 	{
+		sleep();
 		renewalpage.Clickunderreviewtab();
-		view.renwealrequestview(i);
+		view.requestforunderview(i);
 		renewalpage.rejectionfromunderreview(); 
 		
 	}
@@ -107,7 +122,7 @@ public class LegalUser extends Basepage
 		sleep();
 		homepage.Buildoutbutton();
 		sleep();
-		view.requestviewforlegal(i);
+		view.txidthirdfield(i);
 		buildout.sendtoundereviewbuildoutrequest();
 		
 	}
@@ -116,7 +131,7 @@ public class LegalUser extends Basepage
 		refreshthepage();
 		sleep();
 		buildout.clickunderreviewtab();
-		view.requestviewforlegal(i);
+		view.txidthirdfield(i);
 		buildout.sendtoFCCfromundereview();
 	}
 	
@@ -125,7 +140,7 @@ public class LegalUser extends Basepage
 		refreshthepage();
 		sleep();
 		buildout.clickunderreviewtab();
-		view.requestviewforlegal(i);
+		view.txidthirdfield(i);
 		buildout.Rejectfromunderreviewpage();
 		
 	}
@@ -163,7 +178,7 @@ public class LegalUser extends Basepage
 		sleep();
 		homepage.Buildoutbutton();
 		sleep();
-		view.requestviewforlegal(i);
+		view.txidthirdfield(i);
 		buildout.rejectwithlegaluser();
 	}
 

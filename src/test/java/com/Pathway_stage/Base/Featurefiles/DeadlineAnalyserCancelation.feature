@@ -27,14 +27,15 @@ Then close browser after check the status of the cancelation application with fi
 Scenario: Check the status of the cancelation application with first Legaluser for deadline analyser moduel
 
 When first legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel
-Then Check the approved status of the Cancelation application for deadLine analyser moduel with first Legalsuer
+Then Check the approved status of the Cancelation application for deadLine analyser moduel with first Legalsuer send to underreview
+Then send to FCC to a cancelation application with first legal user from undereview page
 Then close browser after check the status of the cancelation application with first legal user for deadLine analyser moduel
 
 @Marketuser2
 Scenario: Rise a Cancelation request with Market user2 for deadline analyser moduel
 Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with second Marketuser
 When  second Marketuser login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with second marketuser in the deadline analyser section with "5-05-2020" to "8-52-2020"
+Then rise a canceanlation request with second marketuser in the deadline analyser section with "5-05-2020" to "8-25-2023"
 Then close browser after rise a request with second marketuser
 
 @RpmUser2
@@ -49,7 +50,7 @@ Then close browser after check the status of the cancelation application with  s
 Scenario: Rise a Cancelation request with Market user3 for deadline analyser moduel
 Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with third  Marketuser
 When  third Market user login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with  third market user in the deadline analyser section with "5-05-2020" to "8-52-2020"
+Then rise a canceanlation request with  third market user in the deadline analyser section with "5-05-2020" to "8-25-2023"
 Then close browser after rise a request with  third market user
 
 @RpmUser3
@@ -70,7 +71,7 @@ Then close browser after check the status of the cancelation application with  t
 Scenario: Rise a Cancelation request with Market user4 for deadline analyser moduel
 Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with  fourth Marketuser
 When  fourth Marketuser login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with fourth marketuser in the deadline analyser section with "5-05-2020" to "8-52-2020"
+Then rise a canceanlation request with fourth marketuser in the deadline analyser section with "5-05-2020" to "8-25-2023"
 Then close browser after rise a request with  fourth marketuser
 
 @RpmUser4
@@ -98,7 +99,7 @@ Then close browser after check the status of the cancelation application with fo
 @RPMUSER5
 Scenario: Rise a Cancelation request with RPMUSER5 for deadline analyser moduel
 When fifth RPMUSER login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with fifth RPMUSER in the deadline analyser section with "09/24/2023" to "03/24/2025"
+Then rise a canceanlation request with fifth RPMUSER in the deadline analyser section with "09/24/2023" to "8-25-2023"
 Then close browser after rise a request with fifth RPMUSER
 
 @NOCUser5
@@ -112,14 +113,15 @@ Then close browser after check the status of the cancelation application with  f
 Scenario: Check the status of the cancelation application with Legaluser5 for deadline analyser moduel
 
 When fifth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel
-Then Check the approved status of the Cancelation application for deadLine analyser moduel with fifth Legalsuer
+Then Check the approved status of the Cancelation application for deadLine analyser moduel with fifth Legalsuer from underreview tab
+Then send to FCC cancelation application from under review tab with Fifth Legal user 
 Then close browser after check the status of the cancelation application with fifth legaluser for deadLine analyser moduel
 
 @RPMUSER6
 Scenario: Rise a Cancelation request with RPMUSER6 for deadline analyser moduel
 
 When sixth RPMUSER login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with  sixth RPMUSER in the deadline analyser section with "5-05-2020" to "8-52-2020"
+Then rise a canceanlation request with  sixth RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023"
 Then close browser after rise a request with  sixth RPMUSER
 
 @NOCUser6
@@ -133,7 +135,7 @@ Then close browser after check the status of the cancelation application with si
 Scenario: Rise a Cancelation request with RPMUSER7 for deadline analyser moduel
 
 When  seventh RPMUSER login with valid credtinlas for Deadline analyser
-Then rise a canceanlation request with  seventh RPMUSER in the deadline analyser section with "5-05-2020" to "8-52-2020"
+Then rise a canceanlation request with  seventh RPMUSER in the deadline analyser section with "5-05-2020" to "8-25-2023"
 Then close browser after rise a request with seventh  RPMUSER
 
 @NOCUser7
@@ -149,6 +151,56 @@ Scenario: Check the status of the cancelation application with Legaluser7 for de
 When seventh legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel
 Then Check the Rejected status of the Cancelation application for deadLine analyser moduel with seventh Legalsuer
 Then close browser after check the status of the cancelation application with  seventh legaluser   for deadLine analyser moduel
+
+@Marketuser8
+Scenario: Rise a Cancelation request with Market user1 for deadline analyser moduel
+Given enter url application into "chrome" for Deadlineanlayser in the "Stage" environment with  eighth Market user
+When  eighth Market user login with valid credtinlas for Deadline analyser
+Then rise a canceanlation request with  eighth marketuser in the deadline analyser section with "11-27-2021" to "8-25-2023"
+Then close browser after rise a request with  eighth market user
+
+@RpmUser8
+Scenario: Check the status of the cancelation application with eighth Rpmuser for deadline analyser moduel
+
+When eighth Rpm user login with valid credtinals  for Cancelation process for Deadline analyser moduel
+Then Check the "approved" status of the Cancelation application for deadLine analyser moduel with eighth RPM USER
+Then close browser after check the status of the cancelation application with  eighth RPMuser for deadLine analyser moduel
+
+@NOCUser8
+Scenario: Check the status of the cancelation application with eighth NOCuser for deadline analyser moduel
+
+When eighth NOC user login with valid credtinals  for Cancelation process for Deadline analyser moduel
+Then Check the "approved" status of the Cancelation application for deadLine analyser moduel with eighth NOC user
+Then close browser after check the status of the cancelation application with eighth NOCuser for deadLine analyser moduel
+
+@LegalUser8
+Scenario: Check the status of the cancelation application with eighth Legaluser for deadline analyser moduel
+
+When eighth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel
+Then Check the approved status of the Cancelation application for deadLine analyser moduel with eighth Legalsuer send to underreview
+Then reject cancelation application with eighth legal user from undereview page
+Then close browser after check the status of the cancelation application with eighth legal user for deadLine analyser moduel
+
+@RPMUSER9
+Scenario: Rise a Cancelation request with ninth RPMUSER for deadline analyser moduel
+When ninth RPMUSER login with valid credtinlas for Deadline analyser
+Then rise a canceanlation request with ninth RPMUSER in the deadline analyser section with "09/24/2023" to "8-25-2023"
+Then close browser after rise a request with ninth RPMUSER
+
+@NOCUser9
+Scenario: Check the status of the cancelation application with ninth NOCuser for deadline analyser moduel
+
+When ninth NOC user login with valid credtinals  for Cancelation process for Deadline analyser moduel
+Then Check the "approved" status of the Cancelation application for deadLine analyser moduel with ninth NOCuser
+Then close browser after check the status of the cancelation application with  ninth NOCuser for deadLine analyser moduel
+
+@LegalUser9
+Scenario: Check the status of the cancelation application with ninth Legaluser for deadline analyser moduel
+
+When ninth legal user login with valid credtinals  for Cancelation process for Deadline analyser moduel
+Then Check the approved status of the Cancelation application for deadLine analyser moduel with ninth Legalsuer from underreview tab
+Then reject cancelation application from under review tab with ninth Legal user 
+Then close browser after check the status of the cancelation application with ninth legaluser for deadLine analyser moduel
 
 
 

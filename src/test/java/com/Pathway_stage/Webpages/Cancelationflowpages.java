@@ -32,7 +32,7 @@ public class Cancelationflowpages extends Basepage {
 	private By legaluserconfirmationbutton = By.xpath("(.//*[text()='YES'])[1]");
 	private By legaluserrejectbutton =By.xpath("(.//*[@class='btn-grid reject ng-star-inserted'])[1]");
 	private By rpmconfirmationforapprovedbutton = By.xpath("(//div[@class='modal-footer']/button[text()='YES'])[1]");
-	private By underreviewpage = By.xpath("//a[normalize-space()='UNDER REVIEW (7)']");
+	private By underreviewpage = By.xpath("(.//*[@class='admin-nav-item nav-link'])[1]");
 	private By sendtoFCCtab = By.xpath("//a[normalize-space()='SUBMITTED TO FCC (86)']");
 	private By sendtofccbutton =By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
 	private By rejectbuttonforunderreviewpage = By.xpath("//button[normalize-space()='REJECT']");
@@ -183,6 +183,7 @@ public class Cancelationflowpages extends Basepage {
 	}
 	public void clickUnderreviewtab()
 	{
+		sleep();
 		elementclickbyjs(underreviewpage);
 		sleep();
 	}
@@ -216,7 +217,7 @@ public class Cancelationflowpages extends Basepage {
 
 	public void approvecancelationwithNOCuser() {
 		elementclickbyjs(RPMuserchecklistbox);
-		click(approvebutton);
+		elementclickbyjs(approvebutton);
 		sleep();
 		click(confirmationbutton);
 		sleep();

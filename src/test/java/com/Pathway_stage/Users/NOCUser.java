@@ -1,5 +1,7 @@
 package com.Pathway_stage.Users;
 
+import org.openqa.selenium.StaleElementReferenceException;
+
 import com.Pathway_stage.Base.Basepage;
 import com.Pathway_stage.Testdata.*;
 import com.Pathway_stage.Webpages.Buildoutflowpages;
@@ -63,7 +65,7 @@ public class NOCUser extends Basepage
 		view.requestforcancelationviewdeadlineanalsyer(txiddata);
 		
 		
-		if (statusoftheapplication.equals("Approved"))
+		if (statusoftheapplication.equals("approved"))
 		{
 			cancel.approvecancelationwithNOCuser();
 		}
@@ -73,17 +75,24 @@ public class NOCUser extends Basepage
 	}
 	public void renewalrequestwithNOCuser(String statusoftheapplication, int i)
 	{
-		refreshthepage();
-		sleep();
-		homepage.renewalbutton();	
-		view.renwealrequestview(i);
-		if (statusoftheapplication.equals("Approved"))
-		{
-			renewalpage.renewlapprovewithNOCuser();
+		try {
+			refreshthepage();
+			sleep();
+			refreshthepage();
+			sleep();
+			homepage.renewalbutton();	
+			view.renwealrequestview(i);
+			if (statusoftheapplication.equals("Approved"))
+			{
+				renewalpage.renewlapprovewithNOCuser();
+			}
+			else {
+				renewalpage.rejectrenewalwithNOCuser();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-		else {
-			renewalpage.rejectrenewalwithNOCuser();
-		}
+		
 	}
 	public void buildourequestwithNOCuser(String statusoftheapplication, int i)
 	{

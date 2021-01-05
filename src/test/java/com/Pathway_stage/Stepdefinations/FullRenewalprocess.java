@@ -119,7 +119,7 @@ public void request_send_to_FCC_of_Renewal_Request_with_first_Legal_User(int i)
 public void reewalapplication_sendtoFCC_from_underreviewpage_with_First_legal_user(int i) 
 {
     try {
-		legal.sendtoFCCfromundereviewpage(i);
+		legal.renewalsendtofcc(i);
 		extentpassreport("first legal user  renewal application send to fcc");
 		System.out.println("first legal user  renewal application send to fcc");
 	} catch (Exception e) {
@@ -249,10 +249,8 @@ public void check_the_status_a_Renewal_Request_with_third_NOC_User(String status
 @Then("^logout  third NOC User after rise a Renewal process$")
 public void logout_third_NOC_User_after_rise_a_Renewal_process() 
 {
-	refreshthepage();
-	sleep();
 	closebrowser();
-	   extentpassreport("logout RPM user 3  after rise a renewal request");
+	  extentpassreport("logout RPM user 3  after rise a renewal request");
 	   System.out.println("logout RPM user 3  after rise a renewal request");
 	   
 }
@@ -287,7 +285,7 @@ public void logout_third_Legal_User_after_rise_a_Full_Renewal_process() throws T
 	closebrowser();
 	   extentpassreport("logout legal user 3  after rise a renewal request");
 	   System.out.println("logout legal user 3  after rise a renewal request");
-	extentreportssave();
+	
   
 }
 @When("^fourth RPM User login with valid creditinals for Renewal process$")

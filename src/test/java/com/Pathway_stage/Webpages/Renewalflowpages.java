@@ -30,7 +30,7 @@ public class Renewalflowpages extends Basepage
 	private By legaluserconfirmationbutton = By.xpath("(.//*[text()='YES'])[1]");
 	private By legaluserrejeectbutton = By.xpath("//button[@class='btn-grid reject ng-star-inserted']");
 	private By sendtounderreeviewbutton = By.xpath("//button[@class='btn-grid approve width-170 ng-star-inserted']");
-	private By underreviewtab = By.xpath("//a[normalize-space()='UNDER REVIEW (4)']");
+	private By underreviewtab = By.xpath("(.//*[@class='admin-nav-item nav-link'])[1]");
 	private By rejectbuttonfromunderreview  = By.xpath("//button[normalize-space()='REJECT']");
 	
 	public void renewalrequestwithmarketuser(String txid, String rxid)
@@ -171,6 +171,7 @@ public class Renewalflowpages extends Basepage
 	}
 	public void Clickunderreviewtab()
 	{
+		sleep();
 		elementclickbyjs(underreviewtab);
 		sleep();
 	}

@@ -19,6 +19,8 @@ public class DeadlineAnalyserpage extends Basepage
 	private By gettingnewtxid =By.xpath("(.//*[@class='slick-cell l0 r0 true'])[1]/following-sibling::div[@class='slick-cell l1 r1 true']");
 	private By okbutton =By.xpath(".//*[@class='btn-grid approve']");
 	
+	
+	
 
 	
 	public String RisecancelationRequestwithMarketuser(String fromdate, String todate)
